@@ -1,7 +1,7 @@
 # Личный проект «Мишка» 
 
 * Студент: [Тимур Деменчук](https://up.htmlacademy.ru/adaptive/28/user/2041637).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Остаповец](https://htmlacademy.ru/profile/seraphim).
 
 ---
 
