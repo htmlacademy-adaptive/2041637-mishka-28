@@ -1,0 +1,75 @@
+.advantages__wrapper {
+  padding-top: 68px;
+  padding-left: 175px;
+  padding-bottom: 90px;
+  padding-right: auto;
+}
+
+.advantages__title {
+  margin: 0;
+  margin-bottom: 95px;
+}
+
+.advantages__list {
+  width: 700px;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.advantages__item {
+  position: relative;
+  flex-direction: column;
+  width: 350px;
+  margin-bottom: 111px;
+
+  &:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
+}
+
+.advantages__icon {
+  position: absolute;
+  top: -68px;
+}
+
+.advan__icon {
+  display: list-item;
+  list-style: none;
+  width: 60px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+
+  &--flower {
+    background-image: url("../../img/icon-flower.svg");
+  }
+
+  &--price {
+    background-image: url("../../img/icon-money.svg");
+  }
+
+  &--like {
+    background-image: url("../../img/icon-heart.svg");
+  }
+
+  &--handmade {
+    background-image: url("../../img/icon-ravel.svg");
+  }
+
+  &--native {
+    background-image: url("../../img/icon-rocket.svg");
+  }
+
+  &--package {
+    background-image: url("../../img/icon-present.svg");
+  }
+}
+
+.advantages__description {
+  margin: 0;
+  .set-font(20px, 22px);
+  font-weight: 700;
+}
