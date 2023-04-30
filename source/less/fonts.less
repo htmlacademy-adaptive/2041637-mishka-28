@@ -19,10 +19,6 @@
   line-height: @line-height;
 }
 
-.title {
-  .set-font(53px, 57px);
-}
-
 .accent-text {
   color: @text-accent;
   .set-font(17px, 17px);
@@ -39,4 +35,11 @@
   color: @text-primary;
   .set-font(20px, 24px);
   font-weight: 700;
+}
+
+.form-accent {
+  .accent-text;
+  position: absolute;
+  left: 62px;
+  top: 20px;
 }

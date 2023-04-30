@@ -1,9 +1,11 @@
 .navigation {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  margin: 0;
   padding: 0;
+}
+
+.navigation__wrapper {
+  .wrapper;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navigation__list {
@@ -19,21 +21,15 @@
   padding-bottom: 32px;
   padding-right: 35px;
   padding-left: 35px;
-  border-right: 1px solid fade(#000000, 10%);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 
   &:first-child {
     padding-left: 0;
   }
 
   &:last-child {
+    padding-right: 0;
     border-right: none;
-  }
-
-  &--logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 }
 
@@ -44,4 +40,8 @@
   font-weight: 700;
   line-height: 24px;
   font-size: 17px;
+}
+
+.navigation__cart-filled {
+  margin-left: 32px;
 }

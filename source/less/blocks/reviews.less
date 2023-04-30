@@ -1,11 +1,23 @@
 .reviews__wrapper {
+  .wrapper;
   box-sizing: border-box;
   display: grid;
+  position: relative;
   grid-template-columns: 250px 1fr 175px;
   padding: 78px 0 186px 174px;
-  background-image: url("../../img/review-bg.png"), url("../../img/zigzag-grey.svg");
-  background-repeat: no-repeat, no-repeat;
-  background-position: top left, bottom center;
+  background-image: url("../img/review-bg.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 1050px;
+    height: 300px;
+    top: 524px;
+    background: url("../img/zigzag-grey.svg");
+    background-repeat: no-repeat;
+  }
 }
 
 .reviews__title {

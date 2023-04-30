@@ -2,7 +2,12 @@
   margin-bottom: 57px;
 }
 
+.products__wrapper {
+  .wrapper;
+}
+
 .products__list {
+  padding: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -15,8 +20,14 @@
   border: 1px solid #ececec;
 }
 
+.products__image-wrapper {
+  width: 314px;
+  height: 462px;
+}
+
 .products__description {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   padding: 27px 27px 25px 27px;
 }
@@ -30,7 +41,7 @@
   display: block;
   .set-font(15px, 30px);
   color: @text-secondary;
-  margin-bottom: 12px;
+  margin-bottom: auto;
 }
 
 .products__controls {
