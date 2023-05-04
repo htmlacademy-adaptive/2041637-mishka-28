@@ -1,0 +1,41 @@
+.categories__list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.categories__item {
+  padding-top: 24px;
+  padding-bottom: 31px;
+
+  &:nth-child(odd) {
+    background-color: #63d1bb;
+  }
+
+  &:nth-child(even) {
+    background-color: #56c3b2;
+  }
+
+  &--lamp {
+    background-image: url("../../img/lamp.svg");
+    background-position: top 23px right 36px;
+    background-repeat: no-repeat;
+  }
+
+  &--lego {
+    background-image: url("../../img/lego.svg");
+    background-position: top 21px right 27px;
+    background-repeat: no-repeat;
+  }
+}
+
+.categories__title {
+  display: block;
+  max-width: 130px;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
