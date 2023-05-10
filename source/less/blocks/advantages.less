@@ -16,6 +16,15 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (min-width: @width-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px;
+  }
 }
 
 .advantages__item {
@@ -29,25 +38,53 @@
 
   &--flower {
     background-image: url("../img/icon-flower.svg");
+
+    @media (min-width: @width-tablet) {
+      order: 1;
+    }
   }
 
   &--money {
     background-image: url("../img/icon-money.svg");
+
+    @media (min-width: @width-tablet) {
+      order: 3;
+    }
   }
 
   &--heart {
     background-image: url("../img/icon-heart.svg");
+
+    @media (min-width: @width-tablet) {
+      order: 5;
+    }
   }
 
   &--ravel {
     background-image: url("../img/icon-ravel.svg");
+
+    @media (min-width: @width-tablet) {
+      order: 2;
+    }
   }
 
   &--rocket {
     background-image: url("../img/icon-rocket.svg");
+
+    @media (min-width: @width-tablet) {
+      order: 4;
+    }
   }
 
   &--present {
     background-image: url("../img/icon-present.svg");
+
+    @media (min-width: @width-tablet) {
+      order: 6;
+    }
+  }
+
+  @media (min-width: @width-tablet) {
+    flex: 1 1 250px;
   }
 }

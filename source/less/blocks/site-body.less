@@ -1,6 +1,12 @@
 .site-body {
   margin: 0 auto;
-  max-width: 320px;
+  width: 100%;
+  min-width: @width-mobile;
+  max-width: @width-tablet;
   font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
   background-color: #ffffff;
+
+  @media (min-width: @width-tablet) {
+    max-width: @width-desktop;
+  }
 }

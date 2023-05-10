@@ -2,40 +2,60 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Мишка</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="site-body">
 
     <header class="site-header">
+
       <div class="site-header__header">
         <a class="site-header__logo" href=""></a>
-        <button class="site-header__menu-button" type="button">
-          <span class="visually-hidden">Меню сайта</span>
-        </button>
+        <div class="site-header__mobile-header wrapper">
+          <button class="site-header__menu-button" type="button">
+            <span class="visually-hidden">Меню сайта</span>
+          </button>
+        </div>
+        <nav class="site-header__main-nav navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Каталог товаров</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Вязание на заказ</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="site-header__utility-nav navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a class="navigation__link" href="">
+                <span class="navigation__icon"></span>
+                Поиск по сайту
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="">
+                <span class="navigation__icon"></span>
+                Корзина пока пуста
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="site-header__secondary-nav navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Новые поступления</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Распродажа</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="site-header__delivary">Бесплатная доставка по России</p>
       </div>
-      <nav class="site-header__navigation navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item">
-            <a class="navigation__link" href="">Каталог товаров</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="">Вязание на заказ</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="">
-              <span class="navigation__icon"></span>
-              Поиск по сайту
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="">
-              <span class="navigation__icon"></span>
-              Корзина пока пуста
-            </a>
-          </li>
-        </ul>
-      </nav>
+
     </header>
 
     <main class="site-main">
@@ -59,7 +79,7 @@
             Детская игрушка
           </label>
         </fieldset>
-        <fieldset class="form__category">
+        <fieldset class="form__category form__category--transformed">
           <legend class="form__category-title">Цвет</legend>
           <label class="form__label">
             <input type="checkbox" name="color-white" class="visually-hidden">
@@ -119,7 +139,7 @@
           <label class="form__category-title" for="comment" >Доп</label>
           <textarea class="form__input-textfield" id="comment" name="user-comment" placeholder="Опишите все ваши пожелания к заказу"></textarea>
         </div>
-        <div class="form__item">
+        <div class="form__controls">
           <span class="form__requirements">*Поля обязательны для заполнения</span>
           <button class="form__button" type="submit">Отправить</button>
         </div>
@@ -128,6 +148,9 @@
     </main>
 
     <footer class="site-footer">
+      <a href="" class="site-footer__logo">
+        <img src="./img/logo-footer.svg" alt="">
+      </a>
       <div class="site-footer__socials socials">
         <a class="socials__item" href="">
           <img src="./img/vkontakte.svg" alt="">

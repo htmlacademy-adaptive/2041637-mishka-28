@@ -3,12 +3,32 @@
   flex-direction: column;
   padding-top: 31px;
   margin-bottom: 31px;
+
+  @media (min-width: @width-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: @width-desktop) {
+    position: relative;
+  }
 }
 
 .weekly__product {
   .title;
   margin: 0;
   margin-bottom: 3px;
+
+  @media (min-width: @width-tablet) {
+    flex-grow: 1;
+  }
+
+  @media (min-width: @width-desktop) {
+    position: absolute;
+    left: 175px;
+    top: 69px;
+    width: 100px;
+  }
 }
 
 .weekly__title {
@@ -17,6 +37,33 @@
   line-height: 20px;
   font-weight: 700;
   color: #63d1bb;
+
+  @media (min-width: @width-desktop) {
+    position: absolute;
+    left: 32px;
+    top: 69px;
+    width: 100px;
+  }
+}
+
+.weekly__card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: @width-tablet) {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 292px 334px;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  @media (min-width: @width-desktop) {
+    display: grid;
+    justify-content: end;
+    column-gap: 58px;
+    grid-template-columns: 292px 50%;
+  }
 }
 
 .weekly__description {
@@ -24,6 +71,15 @@
   line-height: 24px;
   font-weight: 400;
   color: #444444;
+
+  @media (min-width: @width-tablet) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-top: 153px;
+  }
 }
 
 .weekly__params {
@@ -31,6 +87,11 @@
   grid-template-columns: 97px 1fr;
   row-gap: 5px;
   margin-bottom: 28px;
+
+  @media (min-width: @width-tablet) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
 }
 
 .weekly__params-item {
@@ -42,8 +103,18 @@
   border-bottom: 1px solid #ececec;
 }
 
-.weekly__image {
+.weekly__image-wrapper {
   margin-bottom: 25px;
+
+  @media (min-width: @width-tablet) {
+    grid-row: 1 / 5;
+    grid-column: 2 / 3;
+  }
+}
+
+.weekly__image {
+  width: 100%;
+  height: auto;
 }
 
 .weekly__price {
@@ -52,9 +123,19 @@
   line-height: 24px;
   font-weight: 700;
   color: #444444;
+
+  @media (min-width: @width-tablet) {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
 }
 
 .weekly__button {
   .button;
   margin-bottom: 42px;
+
+  @media (min-width: @width-tablet) {
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
+  }
 }

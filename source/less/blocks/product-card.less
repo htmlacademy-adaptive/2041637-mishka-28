@@ -2,10 +2,25 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #ececec;
+
+  @media (min-width: @width-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: @width-desktop) {
+    display: flex;
+    flex-direction: column;
+    width: 316px;
+  }
+}
+
+.product-card__image-wrapper {
+  height: 195px;
 }
 
 .product-card__image {
-  height: 195px;
+  height: auto;
 }
 
 .product-card__content {

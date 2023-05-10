@@ -4,6 +4,10 @@
   padding: 0;
   margin: 0;
   list-style: none;
+
+  @media (min-width: @width-tablet) {
+    flex-direction: row;
+  }
 }
 
 .categories__item {
@@ -28,6 +32,10 @@
     background-image: url("../../img/lego.svg");
     background-position: top 21px right 27px;
     background-repeat: no-repeat;
+  }
+
+  @media (min-width: @width-tablet) {
+    flex-grow: 1;
   }
 }
 
