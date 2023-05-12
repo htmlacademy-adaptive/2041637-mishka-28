@@ -3,22 +3,6 @@
   display: flex;
   flex-direction: column;
   justify-content: end;
-
-  @media (min-width: @width-tablet) {
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-    grid-template-areas:
-      ".  .   utility-nav"
-      "main-nav  .  delivary";
-  }
-
-  @media (min-width: @width-desktop) {
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-    grid-template-areas:
-      "main-nav  .   utility-nav"
-      "secondary-nav  .  delivary";
-  }
 }
 
 .site-header__logo {
@@ -53,6 +37,24 @@
   background-repeat: no-repeat;
   background-position: center;
   border: none;
+}
+
+.site-header__navigation {
+  @media (min-width: @width-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-areas:
+      ".  .   utility-nav"
+      "main-nav  .  delivary";
+  }
+
+  @media (min-width: @width-desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-areas:
+      "main-nav  .   utility-nav"
+      "secondary-nav  .  delivary";
+  }
 }
 
 .site-header__main-nav {
