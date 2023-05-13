@@ -9,50 +9,44 @@
   <body class="site-body">
 
     <header class="site-header">
-      <div class="site-header__header">
-        <a class="site-header__logo" href=""></a>
+      <div class="site-header__wrapper">
+        <a class="site-header__logo"></a>
         <div class="site-header__mobile-header">
           <button class="site-header__menu-button" type="button">
             <span class="visually-hidden">Меню сайта</span>
           </button>
         </div>
         <nav class="site-header__navigation">
-          <div class="site-header__main-nav navigation">
-            <ul class="navigation__list">
-              <li class="navigation__item">
-                <a class="navigation__link" href="">Каталог товаров</a>
-              </li>
-              <li class="navigation__item">
-                <a class="navigation__link" href="">Вязание на заказ</a>
-              </li>
-            </ul>
-          </div>
-          <div class="site-header__utility-nav navigation">
-            <ul class="navigation__list">
-              <li class="navigation__item">
-                <a class="navigation__link" href="">
-                  <span class="navigation__icon"></span>
-                  Поиск по сайту
-                </a>
-              </li>
-              <li class="navigation__item">
-                <a class="navigation__link" href="">
-                  <span class="navigation__icon"></span>
-                  Корзина пока пуста
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="site-header__secondary-nav navigation">
-            <ul class="navigation__list">
-              <li class="navigation__item">
-                <a class="navigation__link" href="">Новые поступления</a>
-              </li>
-              <li class="navigation__item">
-                <a class="navigation__link" href="">Распродажа</a>
-              </li>
-            </ul>
-          </div>
+          <ul class="site-header__main-nav navigation">
+            <li class="navigation__item">
+              <a class="navigation__link" href="./catalog.html">Каталог товаров</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="./form.html">Вязание на заказ</a>
+            </li>
+          </ul>
+          <ul class="site-header__utility-nav navigation">
+            <li class="navigation__item">
+              <a class="navigation__link" href="">
+                <span class="navigation__icon"></span>
+                Поиск по сайту
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="">
+                <span class="navigation__icon"></span>
+                Корзина пока пуста
+              </a>
+            </li>
+          </ul>
+          <ul class="site-header__secondary-nav navigation navigation--hidden">
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Новые поступления</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Распродажа</a>
+            </li>
+          </ul>
           <p class="site-header__delivary">Бесплатная доставка по России</p>
         </nav>
       </div>
@@ -60,7 +54,7 @@
 
     <main class="site-main">
       <section class="entry-section entry-section--index">
-        <div class="wrapper">
+        <div class="entry-section__wrapper">
           <h1 class="entry-section__title">Милые штуки<br>ручной<br>работы для дома</h1>
         </div>
       </section>
@@ -81,30 +75,30 @@
         </ul>
       </section>
 
-      <section class="weekly wrapper">
-          <h2 class="weekly__product">Вязанные корзинки</h2>
-          <span class="weekly__title">Товар недели</span>
-          <div class="weekly__card">
-            <p class="weekly__description">Экологически чистая пряжа,
-              ручная работа. Доступны в шести расцветках и трёх размерах.
-            </p>
-            <div class="weekly__params">
-              <div class="weekly__params-item">Цвет:</div>
-              <div class="weekly__params-item">тиффани/серый</div>
-              <div class="weekly__params-item">Диаметр:</div>
-              <div class="weekly__params-item">25 см</div>
-              <div class="weekly__params-item">Высота:</div>
-              <div class="weekly__params-item">15 см</div>
-            </div>
-            <a class="weekly__image-wrapper" href="">
-              <img class="weekly__image" src="./img/weekly.jpg" alt="">
-            </a>
-            <span class="weekly__price">Цена: 990 руб.</span>
-            <a class="weekly__button" href="">Заказать</a>
-          </div>
+      <section class="weekly">
+        <h2 class="weekly__product">Вязанные корзинки</h2>
+        <span class="weekly__title">Товар недели</span>
+        <div class="weekly__card">
+          <p class="weekly__description">Экологически чистая пряжа,
+            ручная работа. Доступны в шести расцветках и трёх размерах.
+          </p>
+          <dl class="weekly__params">
+            <dt class="weekly__params-item">Цвет:</dt>
+            <dd class="weekly__params-item">тиффани/серый</dd>
+            <dt class="weekly__params-item">Диаметр:</dt>
+            <dd class="weekly__params-item">25 см</dd>
+            <dt class="weekly__params-item">Высота:</dt>
+            <dd class="weekly__params-item">15 см</dd>
+          </dl>
+          <a class="weekly__image-wrapper" href="">
+            <img class="weekly__image" src="./img/weekly.jpg" alt="">
+          </a>
+          <span class="weekly__price">Цена: 990 руб.</span>
+          <a class="weekly__button" href="">Заказать</a>
+        </div>
       </section>
 
-      <section class="advantages wrapper">
+      <section class="advantages">
         <h2 class="visually-hidden">Основные преимущества</h2>
         <span class="advantages__title">Коротко о нас</span>
         <ul class="advantages__list">
@@ -153,16 +147,16 @@
 
       <section class="contacts">
         <h2 class="contacts__title">Контакты</h2>
-        <div class="contacts__contacts">
+        <dl class="contacts__contacts">
           <div class="contacts__group">
-            <div class="contacts__contacts-item">e-mail:</div>
-            <div class="contacts__contacts-item">info@mimimishkashop.ru</div>
+            <dt class="contacts__contacts-item">e-mail:</dt>
+            <dd class="contacts__contacts-item">info@mimimishkashop.ru</dd>
           </div>
           <div class="contacts__group">
-            <div class="contacts__contacts-item">адрес:</div>
-            <div class="contacts__contacts-item">г. Санкт-Петербург ул. Большая Конюшеннаяд. 19/8, офис 101</div>
+            <dt class="contacts__contacts-item">адрес:</dt>
+            <dd class="contacts__contacts-item">г. Санкт-Петербург ул. Большая Конюшеннаяд. 19/8, офис 101</dd>
           </div>
-        </div>
+        </dl>
         <div class="contacts__map"></div>
         <button class="contacts__button">Напишите нам</button>
       </section>
@@ -170,27 +164,34 @@
     </main>
 
     <footer class="site-footer">
-      <a href="" class="site-footer__logo">
-        <img src="./img/logo-footer.svg" alt="">
-      </a>
-      <div class="site-footer__socials socials">
-        <a class="socials__item" href="">
-          <img src="./img/vkontakte.svg" alt="">
+      <div class="site-footer__wrapper">
+        <a href="" class="site-footer__logo">
+          <img src="./img/logo-footer.svg" alt="">
         </a>
-        <a class="socials__item" href="">
-          <img src="./img/youtube.svg" alt="">
-        </a>
-        <a class="socials__item" href="">
-          <img src="./img/telegram.svg" alt="">
-        </a>
-      </div>
-      <div class="site-footer__copyright copyright">
-        <span class="copyright__text">Разработано</span>
-        <a class="copyright__link" href="">
-          <img src="./img/htmlacademy.svg" alt="">
-        </a>
+        <ul class="site-footer__socials socials">
+          <li class="socials__item">
+            <a class="socials__link" href="">
+              <img src="./img/vkontakte.svg" alt="">
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="">
+              <img src="./img/youtube.svg" alt="">
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="">
+              <img src="./img/telegram.svg" alt="">
+            </a>
+          </li>
+        </ul>
+        <div class="site-footer__copyright copyright">
+          <span class="copyright__text">Разработано</span>
+          <a class="copyright__link" href="">
+            <img src="./img/htmlacademy.svg" alt="">
+          </a>
+        </div>
       </div>
     </footer>
-
   </body>
 </html>

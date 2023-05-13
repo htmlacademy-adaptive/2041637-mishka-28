@@ -1,4 +1,8 @@
 .presentation {
+  .wrapper;
+}
+
+.presentation__wrapper {
   display: flex;
   flex-direction: column;
   border: 1px solid #ececec;
@@ -29,7 +33,7 @@
   }
 }
 
-.presentation__video {
+.presentation__player {
   position: relative;
   width: 100%;
 
@@ -43,13 +47,19 @@
   }
 }
 
-.presentation__video-button {
+.presentation__player-button {
   position: absolute;
   border: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: transparent;
+}
+
+.presentation__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .presentation__content {
