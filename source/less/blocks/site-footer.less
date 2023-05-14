@@ -1,7 +1,27 @@
 .site-footer {
+  background-color: #f1f1f1;
+}
+
+.site-footer__wrapper {
+  .wrapper;
   display: flex;
   flex-direction: column;
-  background-color: #f1f1f1;
+
+  @media (min-width: @width-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.site-footer__logo {
+  display: none;
+
+  @media (min-width: @width-tablet) {
+    display: block;
+    width: 102px;
+    height: 34px;
+  }
 }
 
 .site-footer__socials {

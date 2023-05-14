@@ -2,133 +2,168 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Мишка</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="site-body">
 
     <header class="site-header">
-      <div class="site-header__header">
-        <a class="site-header__logo" href=""></a>
-        <button class="site-header__menu-button" type="button">
-          <span class="visually-hidden">Меню сайта</span>
-        </button>
+      <div class="site-header__wrapper">
+        <a class="site-header__logo" href="./index.html"></a>
+        <div class="site-header__mobile-header">
+          <button class="site-header__menu-button" type="button">
+            <span class="visually-hidden">Меню сайта</span>
+          </button>
+        </div>
+        <nav class="site-header__navigation">
+          <ul class="site-header__main-nav navigation">
+            <li class="navigation__item">
+              <a class="navigation__link">Каталог товаров</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="./form.html">Вязание на заказ</a>
+            </li>
+          </ul>
+          <ul class="site-header__utility-nav navigation">
+            <li class="navigation__item">
+              <a class="navigation__link" href="">
+                <span class="navigation__icon"></span>
+                Поиск по сайту
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="">
+                <span class="navigation__icon"></span>
+                Корзина пока пуста
+              </a>
+            </li>
+          </ul>
+          <ul class="site-header__secondary-nav navigation navigation--hidden">
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Новые поступления</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Распродажа</a>
+            </li>
+          </ul>
+          <p class="site-header__delivary">Бесплатная доставка по России</p>
+        </nav>
       </div>
-      <nav class="site-header__navigation navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item">
-            <a class="navigation__link" href="">Каталог товаров</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="">Вязание на заказ</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="">
-              <span class="navigation__icon"></span>
-              Поиск по сайту
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="">
-              <span class="navigation__icon"></span>
-              Корзина пока пуста
-            </a>
-          </li>
-        </ul>
-      </nav>
     </header>
-
     <main class="site-main">
       <section class="entry-section">
-        <h1 class="entry-section__title">Вязание на заказ</h1>
+        <div class="entry-section__wrapper">
+          <h1 class="entry-section__title">Вязание на заказ</h1>
+        </div>
       </section>
-
       <section class="catalog">
         <h2 class="visually-hidden">Каталог товаров</h2>
         <article class="catalog__item product-card">
-          <a class="product-card__image" href="">
-            <img src="./img/photo-mobile-1.jpg" alt="">
+          <a class="product-card__image-wrapper" href="">
+            <img class="product-card__image" src="./img/photo-mobile-1.jpg" alt="">
           </a>
           <div class="product-card__content">
             <div class="product-card__data">
-              <a class="product-card__title" href="">Зайчик-попрыгайчик</a>
+              <h2 class="product-card__title">
+                <a class="product-card__link" href="">
+                  Зайчик-попрыгайчик
+                </a>
+              </h2>
               <p class="product-card__params">Рост 30 см, вес 200 г</p>
             </div>
             <div class="product-card__controls">
               <span class="product-card__price">1 200 руб.</span>
-              <button class="product-card__cart" type="button"></button>
+              <a class="product-card__cart" href=""></a>
             </div>
           </div>
         </article>
         <article class="catalog__item product-card">
-          <a class="product-card__image" href="">
-            <img src="./img/photo-mobile-2.jpg" alt="">
+          <a class="product-card__image-wrapper" href="">
+            <img class="product-card__image" src="./img/photo-mobile-2.jpg" alt="">
           </a>
           <div class="product-card__content">
             <div class="product-card__data">
-              <a class="product-card__title" href="">Корзинка для белья</a>
+              <h2 class="product-card__title">
+                <a class="product-card__link" href="">
+                  Корзинка для белья
+                </a>
+              </h2>
               <p class="product-card__params">Диаметр 15 см, высота 10 см</p>
             </div>
             <div class="product-card__controls">
               <span class="product-card__price">690 руб.</span>
-              <button class="product-card__cart" type="button"></button>
+              <a class="product-card__cart" href=""></a>
             </div>
           </div>
         </article>
         <article class="catalog__item product-card">
-          <a class="product-card__image" href="">
-            <img src="./img/photo-mobile-3.jpg" alt="">
+          <a class="product-card__image-wrapper" href="">
+            <img class="product-card__image" src="./img/photo-mobile-3.jpg" alt="">
           </a>
           <div class="product-card__content">
             <div class="product-card__data">
-              <a class="product-card__title" href="">Большая корзинка для игрушек</a>
+              <h2 class="product-card__title">
+                <a class="product-card__link" href="">
+                  Большая корзинка для игрушек
+                </a>
+              </h2>
               <p class="product-card__params">Диаметр 30 см, высота 30 см</p>
             </div>
             <div class="product-card__controls">
               <span class="product-card__price">1 500 руб.</span>
-              <button class="product-card__cart" type="button"></button>
+              <a class="product-card__cart" href=""></a>
             </div>
           </div>
         </article>
-
       </section>
-
       <aside class="presentation">
-        <h2 class="presentation__title">Процесс производства</h2>
-        <div class="presentation__video">
-          <button class="presentation__video-button">
-            <img src="./img/play.svg" alt="">
-            <span class="visually-hidden">Начать просмотр видео</span>
-          </button>
-          <video autoplay poster="img/video-mobile.png">
-            <source src="#" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-          </video>
-        </div>
-        <div class="presentation__content">
-          <p class="presentation__description">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
-          <button class="presentation__button">Сделать заказ</button>
+        <div class="presentation__wrapper">
+          <h2 class="presentation__title">Процесс производства</h2>
+          <div class="presentation__player">
+            <button class="presentation__player-button">
+              <img src="./img/play.svg" alt="">
+              <span class="visually-hidden">Начать просмотр видео</span>
+            </button>
+            <video class="presentation__video" autoplay poster="img/video-mobile.png">
+              <source src="#" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+            </video>
+          </div>
+          <div class="presentation__content">
+            <p class="presentation__description">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
+            <button class="presentation__button">Сделать заказ</button>
+          </div>
         </div>
       </aside>
-
     </main>
-
     <footer class="site-footer">
-      <div class="site-footer__socials socials">
-        <a class="socials__item" href="">
-          <img src="./img/vkontakte.svg" alt="">
+      <div class="site-footer__wrapper">
+        <a href="" class="site-footer__logo">
+          <img src="./img/logo-footer.svg" alt="">
         </a>
-        <a class="socials__item" href="">
-          <img src="./img/youtube.svg" alt="">
-        </a>
-        <a class="socials__item" href="">
-          <img src="./img/telegram.svg" alt="">
-        </a>
-      </div>
-      <div class="site-footer__copyright copyright">
-        <span class="copyright__text">Разработано</span>
-        <a class="copyright__link" href="">
-          <img src="./img/htmlacademy.svg" alt="">
-        </a>
+        <ul class="site-footer__socials socials">
+          <li class="socials__item">
+            <a class="socials__link" href="">
+              <img src="./img/vkontakte.svg" alt="">
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="">
+              <img src="./img/youtube.svg" alt="">
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="">
+              <img src="./img/telegram.svg" alt="">
+            </a>
+          </li>
+        </ul>
+        <div class="site-footer__copyright copyright">
+          <span class="copyright__text">Разработано</span>
+          <a class="copyright__link" href="">
+            <img src="./img/htmlacademy.svg" alt="">
+          </a>
+        </div>
       </div>
     </footer>
   </body>

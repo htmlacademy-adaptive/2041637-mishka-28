@@ -1,15 +1,15 @@
-.site-header__header {
+.site-header__wrapper {
+  .wrapper;
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: end;
-  padding-top: 32px;
-  padding-bottom: 33px;
 }
 
 .site-header__logo {
   position: absolute;
   left: 50%;
+  top: 22px;
   transform: translate(-50%, 0);
   display: block;
   width: 86px;
@@ -17,6 +17,17 @@
   background-image: url("../img/mishka-logo-mobile.svg");
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 2;
+}
+
+.site-header__mobile-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 0;
+
+  @media (min-width: @width-tablet) {
+    display: none;
+  }
 }
 
 .site-header__menu-button {
@@ -27,4 +38,53 @@
   background-repeat: no-repeat;
   background-position: center;
   border: none;
+}
+
+.site-header__navigation {
+  @media (min-width: @width-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-areas:
+      ".  .   utility-nav"
+      "main-nav  .  delivary";
+  }
+
+  @media (min-width: @width-desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-areas:
+      "main-nav  .   utility-nav"
+      "secondary-nav  .  delivary";
+  }
+}
+
+.site-header__main-nav {
+  grid-area: main-nav;
+}
+
+.site-header__utility-nav {
+  grid-area: utility-nav;
+}
+
+.site-header__secondary-nav {
+  display: none;
+
+  @media (min-width: @width-desktop) {
+    display: block;
+    grid-area: secondary-nav;
+  }
+}
+
+.site-header__delivary {
+  display: none;
+
+  @media (min-width: @width-tablet) {
+    display: block;
+    grid-area: delivary;
+    padding-top: 20px;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #444444;
+  }
 }
