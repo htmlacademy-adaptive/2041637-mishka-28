@@ -10,13 +10,15 @@
 
     <header class="site-header">
       <div class="site-header__wrapper">
-        <a class="site-header__logo"></a>
+        <a class="site-header__logo">
+          <img class="site-header__desktop-logo" src="./img/mishka-logo-desktop.svg" alt="Логотип">
+        </a>
         <div class="site-header__mobile-header">
           <button class="site-header__menu-button" type="button">
             <span class="visually-hidden">Меню сайта</span>
           </button>
         </div>
-        <nav class="site-header__navigation">
+        <nav class="site-header__navigation site-header__navigation--nojs">
           <ul class="site-header__main-nav navigation">
             <li class="navigation__item">
               <a class="navigation__link" href="./catalog.html">Каталог товаров</a>
@@ -26,13 +28,13 @@
             </li>
           </ul>
           <ul class="site-header__utility-nav navigation">
-            <li class="navigation__item">
+            <li class="navigation__item navigation__item--seach">
               <a class="navigation__link" href="">
                 <span class="navigation__icon"></span>
-                Поиск по сайту
+                <span class="navigation__seach-text">Поиск по сайту</span>
               </a>
             </li>
-            <li class="navigation__item">
+            <li class="navigation__item navigation__item--cart">
               <a class="navigation__link" href="">
                 <span class="navigation__icon"></span>
                 Корзина пока пуста
@@ -55,7 +57,7 @@
     <main class="site-main">
       <section class="entry-section entry-section--index">
         <div class="entry-section__wrapper">
-          <h1 class="entry-section__title">Милые штуки<br>ручной<br>работы для дома</h1>
+          <h1 class="entry-section__title">Милые штуки<br> ручной <br>работы для дома</h1>
         </div>
       </section>
 
@@ -193,5 +195,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/script.js"></script>
   </body>
 </html>

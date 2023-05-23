@@ -10,6 +10,10 @@
     background-position: center top;
     background-size: cover;
   }
+
+  @media (min-width: @width-tablet) {
+    border-top: 1px solid rgba(#000000, 0.1);
+  }
 }
 
 .entry-section__wrapper {
@@ -17,10 +21,23 @@
 }
 
 .entry-section__title {
+  .title;
   margin: 0 auto;
-  max-width: 260px;
+  max-width: 244px;
   text-align: center;
   font-size: 27px;
   line-height: 30px;
   font-weight: 700;
+
+  @media (min-width: @width-tablet) {
+    max-width: 500px;
+
+    & br {
+      display: none;
+    }
+  }
+
+  @media (min-width: @width-desktop) {
+    max-width: 700px;
+  }
 }

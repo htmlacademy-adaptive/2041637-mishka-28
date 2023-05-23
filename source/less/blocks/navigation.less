@@ -8,22 +8,41 @@
   &--hidden {
     display: none;
   }
+
+  @media (min-width: @width-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .navigation__item {
   position: relative;
   box-sizing: border-box;
-  padding-left: 46px;
+  display: flex;
+  align-items: center;
+  padding-left: 76px;
   padding-top: 28px;
   padding-bottom: 26px;
   border: 1px solid #ececec;
   border-left: none;
   border-right: none;
+
+  &--seach {
+    background-image: url("../img/search.svg");
+    background-position: left 32px center;
+    background-repeat: no-repeat;
+  }
+
+  &--cart {
+    background-image: url("../img/cart.svg");
+    background-position: left 30px center;
+    background-repeat: no-repeat;
+  }
 }
 
 .navigation__link {
   font-size: 17px;
-  line-height: 25px;
+  line-height: 24px;
   font-weight: 700;
   color: #000000;
   text-decoration: none;
