@@ -10,7 +10,7 @@
 
     <header class="site-header">
       <div class="site-header__wrapper">
-        <a class="site-header__logo">
+        <a class="site-header__logo" href="./index.html">
           <img class="site-header__desktop-logo" src="./img/mishka-logo-desktop.svg" alt="Логотип">
         </a>
         <div class="site-header__mobile-header">
@@ -24,7 +24,7 @@
               <a class="navigation__link" href="./catalog.html">Каталог товаров</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link" href="./form.html">Вязание на заказ</a>
+              <a class="navigation__link">Вязание на заказ</a>
             </li>
           </ul>
           <ul class="site-header__utility-nav navigation">
@@ -65,18 +65,18 @@
         <p class="form__description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
         <div class="form__category">
           <fieldset class="form__category-wrapper">
-            <legend class="form__category-title">
+            <h2 class="form__category-title">
               <span class="form__category-name">Тип</span>
               <span class="form__mobile-separator"></span>
-            </legend>
+            </h2>
             <div class="form__category-content">
               <label class="form__label">
-                <input type="radio" name="product-tipe" value="Аксессуар для интерьера" class="visually-hidden">
+                <input class="form__input visually-hidden" type="radio" name="product-tipe" value="Аксессуар для интерьера">
                 <span class="form__marker form__marker--radio"></span>
                 Аксессуар для интерьера
               </label>
               <label class="form__label">
-                <input type="radio" name="product-tipe" value="Детская игрушка" class="visually-hidden">
+                <input class="form__input visually-hidden" type="radio" name="product-tipe" value="Детская игрушка">
                 <span class="form__marker form__marker--radio"></span>
                 Детская игрушка
               </label>
@@ -85,38 +85,38 @@
         </div>
         <div class="form__category">
           <fieldset class="form__category-wrapper ">
-            <legend class="form__category-title">
+            <h2 class="form__category-title">
               <span class="form__category-name">Цвет</span>
               <span class="form__mobile-separator"></span>
-            </legend>
+            </h2>
             <div class="form__category-content form__category-content--transformed">
               <label class="form__label">
-                <input type="checkbox" name="color-white" class="visually-hidden">
+                <input class="form__input visually-hidden" type="checkbox" name="color-white">
                 <span class="form__marker"></span>
                 Белый
               </label>
               <label class="form__label">
-                <input type="checkbox" name="color-grey" class="visually-hidden">
+                <input class="form__input visually-hidden" type="checkbox" name="color-grey">
                 <span class="form__marker"></span>
                 Серый
               </label>
               <label class="form__label">
-                <input type="checkbox" name="color-tiffany" class="visually-hidden">
+                <input class="form__input visually-hidden" type="checkbox" name="color-tiffany">
                 <span class="form__marker"></span>
                 Тиффани
               </label>
               <label class="form__label">
-                <input type="checkbox" name="color-black" class="visually-hidden">
+                <input class="form__input visually-hidden" type="checkbox" name="color-black">
                 <span class="form__marker"></span>
                 Черный
               </label>
               <label class="form__label">
-                <input type="checkbox" name="color-pink" class="visually-hidden">
+                <input class="form__input visually-hidden" type="checkbox" name="color-pink">
                 <span class="form__marker"></span>
                 Розовый
               </label>
               <label class="form__label">
-                <input type="checkbox" name="color-orange" class="visually-hidden">
+                <input class="form__input visually-hidden" type="checkbox" name="color-orange">
                 <span class="form__marker"></span>
                 Оранжевый
               </label>
@@ -125,10 +125,10 @@
         </div>
         <div class="form__category">
           <fieldset class="form__category-wrapper">
-            <legend class="form__category-title">
+            <h2 class="form__category-title">
               <span class="form__category-name">Фио</span>
               <span class="form__mobile-separator"></span>
-            </legend>
+            </h2>
             <div class="form__category-content">
               <div class="form__item">
                 <label class="form__label form__label--no-padding" for="user-name">Имя:</label>
@@ -210,5 +210,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/script.js"></script>
   </body>
 </html>
