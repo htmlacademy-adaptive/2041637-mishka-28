@@ -2,8 +2,8 @@
   position: relative;
   box-sizing: border-box;
   padding-top: 73px;
-  padding-bottom: 73px;
   background-color: #f1f1f1;
+  border-bottom: 1px solid transparent;
 
   &--index {
     background-color: #ffffff;
@@ -12,19 +12,26 @@
     background-position: center top;
     background-size: cover;
 
-    &::before {
-      display: none;
+    @media (min-width: @width-tablet) {
+      margin-bottom: 40px;
+
+      .entry-section__title {
+        margin-bottom: 372px;
+      }
+    }
+
+    @media (min-width: @width-desktop) {
+      margin-bottom: 54px;
+
+      .entry-section__title {
+        margin-bottom: 355px;
+      }
     }
   }
 
   @media (min-width: @width-tablet) {
-    padding-top: 101px;
-    height: 238px;
+    padding-top: 154px;
     border-top: 1px solid rgba(#000000, 0.1);
-  }
-
-  @media (min-width: @width-desktop) {
-    height: 272px;
   }
 
   &::before {
@@ -38,6 +45,7 @@
       background-image: url("../img/zigzag.svg");
       background-repeat: repeat-x;
       background-position: center;
+      z-index: 2;
     }
 
     @media (min-width: @width-desktop) {
@@ -55,6 +63,7 @@
 .entry-section__title {
   .title;
   margin: 0 auto;
+  margin-bottom: 120px;
   max-width: 244px;
   text-align: center;
   font-size: 27px;
