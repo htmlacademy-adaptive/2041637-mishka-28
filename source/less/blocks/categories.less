@@ -1,8 +1,14 @@
 .categories {
-  .wrapper;
+  display: block;
+  position: static;
+
+  @media (min-width: @width-tablet) {
+    .wrapper;
+  }
 }
 
 .categories__list {
+  position: static;
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -15,6 +21,7 @@
 }
 
 .categories__item {
+  position: relative;
   padding-top: 24px;
   padding-bottom: 31px;
 
@@ -27,19 +34,54 @@
   }
 
   &--lamp {
-    background-image: url("../../img/lamp.svg");
-    background-position: top 23px right 36px;
-    background-repeat: no-repeat;
+    &::before {
+      position: absolute;
+      top: 23px;
+      right: 35px;
+      content: "";
+      width: 40px;
+      height: 62px;
+      background-image: url("../../img/lamp.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+    }
   }
 
   &--lego {
-    background-image: url("../../img/lego.svg");
-    background-position: top 21px right 27px;
-    background-repeat: no-repeat;
+    &::before {
+      position: absolute;
+      top: 23px;
+      right: 35px;
+      content: "";
+      width: 60px;
+      height: 62px;
+      background-image: url("../../img/lego.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+    }
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    &::before {
+      opacity: 0.3;
+    }
   }
 
   @media (min-width: @width-tablet) {
-    flex-grow: 1;
+    width: 50%;
+    padding-bottom: 46px;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-bottom: 51px;
   }
 }
 

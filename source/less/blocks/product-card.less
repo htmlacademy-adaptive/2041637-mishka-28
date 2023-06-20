@@ -81,9 +81,16 @@
 .product-card__cart {
   width: 20px;
   height: 19px;
-  background-image: url("../img/cart.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: inherit;
+  color: #000000;
+  opacity: 0.2;
   border: none;
+
+  &:hover {
+    color: #63d1bb;
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
