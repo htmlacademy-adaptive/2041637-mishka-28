@@ -10,8 +10,12 @@
 
     <header class="site-header">
       <div class="site-header__wrapper">
-        <a class="site-header__logo"  href="./index.html">
-          <img class="site-header__desktop-logo" src="./img/mishka-logo-desktop.svg" alt="Логотип">
+        <a class="site-header__logo" href="./index.html">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="./img/mishka-logo-desktop.svg" width="149" height="72">
+            <source media="(min-width: 768px)" srcset="./img/mishka-logo-tablet.svg" width="113" height="46">
+            <img src="./img/mishka-logo-mobile.svg" width="86" height="35" alt="Логотип">
+          </picture>
         </a>
         <div class="site-header__mobile-header">
           <button class="site-header__menu-button site-header__menu-button--nojs" type="button">
@@ -156,7 +160,7 @@
               <img src="./img/play.svg" alt="">
               <span class="visually-hidden">Начать просмотр видео</span>
             </button>
-            <video class="presentation__video" autoplay poster="img/video-mobile.png">
+            <video class="presentation__video" autoplay>
               <source src="#" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
             </video>
           </div>
@@ -221,6 +225,22 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal">
+      <form class="modal__form" action="">
+        <h2 class="modal__title">Добавить в корзину</h2>
+        <p class="modal__tip">Выберите тип:</p>
+        <div class="modal__controls">
+          <div class="modal__input-container">
+            <input class="modal__input modal__input--s" type="radio" name="size" value="size-s" checked>
+            <input class="modal__input modal__input--m" type="radio" name="size" value="size-m">
+            <input class="modal__input modal__input--l" type="radio" name="size" value="size-l">
+          </div>
+          <button class="modal__button" type="submit">Добавить</button>
+        </div>
+      </form>
+    </div>
+
     <script src="./js/script.js"></script>
   </body>
 </html>

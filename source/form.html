@@ -10,8 +10,12 @@
 
     <header class="site-header">
       <div class="site-header__wrapper">
-        <a class="site-header__logo" href="./index.html">
-          <img class="site-header__desktop-logo" src="./img/mishka-logo-desktop.svg" alt="Логотип">
+        <a class="site-header__logo" href="index.html">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="./img/mishka-logo-desktop.svg" width="149" height="72">
+            <source media="(min-width: 768px)" srcset="./img/mishka-logo-tablet.svg" width="113" height="46">
+            <img src="./img/mishka-logo-mobile.svg" width="86" height="35" alt="Логотип">
+          </picture>
         </a>
         <div class="site-header__mobile-header">
           <button class="site-header__menu-button site-header__menu-button--nojs" type="button">
@@ -74,7 +78,7 @@
             </h2>
             <div class="form__category-content">
               <label class="form__label">
-                <input class="form__input visually-hidden" type="radio" name="product-tipe" value="Аксессуар для интерьера">
+                <input class="form__input visually-hidden" type="radio" name="product-tipe" value="Аксессуар для интерьера" checked>
                 <span class="form__marker form__marker--radio"></span>
                 Аксессуар для интерьера
               </label>
@@ -133,15 +137,15 @@
             <div class="form__category-content">
               <div class="form__item">
                 <label class="form__label form__label--no-padding" for="user-name">Имя:</label>
-                <input class="form__input-text" type="text" placeholder="Введите ваше имя*" id="user-name" name="user-name">
+                <input class="form__input-text" type="text" placeholder="Введите ваше имя*" id="user-name" name="user-name" required>
               </div>
               <div class="form__item">
                 <label class="form__label form__label--no-padding" for="user-sername"> Фамилия:</label>
-                <input class="form__input-text" type="text" placeholder="Укажите фамилию*" id="user-sername" name="user-sername">
+                <input class="form__input-text" type="text" placeholder="Укажите фамилию*" id="user-sername" name="user-sername" required>
               </div>
               <div class="form__item">
                 <label class="form__label form__label--no-padding" for="user-second-name">Отчество:</label>
-                <input class="form__input-text" type="text" placeholder="Отчество, если желаете" id="user-second-name" name="user-second-name">
+                <input class="form__input-text" type="text" placeholder="Отчество, если желаете" id="user-second-name" name="user-second-name" required>
               </div>
             </div>
           </fieldset>

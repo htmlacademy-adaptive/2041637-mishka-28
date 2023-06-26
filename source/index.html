@@ -15,7 +15,11 @@
     <header class="site-header">
       <div class="site-header__wrapper">
         <a class="site-header__logo">
-          <img class="site-header__desktop-logo" src="./img/mishka-logo-desktop.svg" alt="Логотип">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="./img/mishka-logo-desktop.svg" width="149" height="72">
+            <source media="(min-width: 768px)" srcset="./img/mishka-logo-tablet.svg" width="113" height="46">
+            <img src="./img/mishka-logo-mobile.svg" width="86" height="35" alt="Логотип">
+          </picture>
         </a>
         <div class="site-header__mobile-header">
           <button class="site-header__menu-button site-header__menu-button--nojs" type="button">
@@ -71,15 +75,15 @@
         <div class="entry-section__categories categories">
           <h2 class="visually-hidden">Категории товаров</h2>
           <ul class="categories__list">
-            <li class="categories__item categories__item--lamp">
-              <div class="wrapper">
+            <li class="categories__item">
+              <a class="categories__category categories__category--lamp" href="">
                 <span class="categories__title">Предметы интерьера</span>
-              </div>
+              </a>
             </li>
-            <li class="categories__item categories__item--lego">
-              <div class="wrapper">
+            <li class="categories__item">
+              <a class="categories__category categories__category--lego" href="">
                 <span class="categories__title">Детские игрушки</span>
-              </div>
+              </a>
             </li>
           </ul>
         </div>
@@ -102,7 +106,11 @@
               <dd class="weekly__params-item">15 см</dd>
             </dl>
             <a class="weekly__image-wrapper" href="">
-              <img class="weekly__image" src="./img/weekly.jpg" alt="">
+              <picture>
+                <source media="(min-width: 1150px)" srcset="./img/triple-set-desktop-1x.jpg 1x, ./img/triple-set-desktop-2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="./img/triple-set-tablet-1x.jpg 1x, ./img/triple-set-tablet-2x.jpg 2x">
+                <img class="product-card__image" srcset="./img/triple-set-mobile-1x.jpg 1x, ./img/triple-set-mobile-2x.jpg 2x" alt="">
+              </picture>
             </a>
             <span class="weekly__price">Цена: 990 руб.</span>
             <a class="weekly__button" href="">Заказать</a>
@@ -230,6 +238,22 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal">
+      <form class="modal__form" action="">
+        <h2 class="modal__title">Добавить в корзину</h2>
+        <p class="modal__tip">Выберите тип:</p>
+        <div class="modal__controls">
+          <div class="modal__input-container">
+            <input class="modal__input modal__input--s" type="radio" name="size" value="size-s" checked>
+            <input class="modal__input modal__input--m" type="radio" name="size" value="size-m">
+            <input class="modal__input modal__input--l" type="radio" name="size" value="size-l">
+          </div>
+          <button class="modal__button" type="submit">Добавить</button>
+        </div>
+      </form>
+    </div>
+
     <script src="./js/script.js"></script>
   </body>
 </html>
