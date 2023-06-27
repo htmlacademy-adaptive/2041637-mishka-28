@@ -1,38 +1,8 @@
 .entry-section {
   position: relative;
   box-sizing: border-box;
-  padding-top: 73px;
   background-color: #f1f1f1;
-  border-bottom: 1px solid transparent;
-
-  &--index {
-    background-color: #ffffff;
-    background-image: url("../img/hero-mobile.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-
-    @media (min-width: @width-tablet) {
-      margin-bottom: 40px;
-
-      .entry-section__title {
-        margin-bottom: 372px;
-      }
-    }
-
-    @media (min-width: @width-desktop) {
-      margin-bottom: 54px;
-
-      .entry-section__title {
-        margin-bottom: 355px;
-      }
-    }
-  }
-
-  @media (min-width: @width-tablet) {
-    padding-top: 154px;
-    border-top: 1px solid rgba(#000000, 0.1);
-  }
+  border-top: 1px solid rgba(#000000, 0.1);
 
   &::before {
     @media (min-width: @width-tablet) {
@@ -54,16 +24,73 @@
       background-image: url("../img/zigzag-desktop.svg");
     }
   }
+
+  &--index {
+    background-color: #f9f9f9;
+    background-image: url("../img/hero-mobile-1x.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 320px auto;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/hero-mobile-2x.png");
+    }
+
+    @media (min-width: @width-tablet) {
+      margin-bottom: 40px;
+      background-image: url("../img/hero-tablet-1x.png");
+      background-size: 768px auto;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/hero-tablet-2x.png");
+      }
+    }
+
+    @media (min-width: @width-desktop) {
+      margin-bottom: 54px;
+      background-image: url("../img/hero-desktop-1x.png");
+      background-size: 1150px auto;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/hero-desktop-2x.png");
+      }
+    }
+  }
 }
 
 .entry-section__wrapper {
   .wrapper;
+  padding-top: 73px;
+  padding-bottom: 73px;
+
+  @media (min-width: @width-tablet) {
+    padding-top: 100px;
+    padding-bottom: 87px;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-top: 101px;
+    padding-bottom: 113px;
+  }
+
+  &--index {
+    padding-bottom: 120px;
+
+    @media (min-width: @width-tablet) {
+      padding-top: 154px;
+      padding-bottom: 372px;
+    }
+
+    @media (min-width: @width-desktop) {
+      padding-top: 157px;
+      padding-bottom: 355px;
+    }
+  }
 }
 
 .entry-section__title {
   .title;
   margin: 0 auto;
-  margin-bottom: 120px;
   max-width: 244px;
   text-align: center;
   font-size: 27px;

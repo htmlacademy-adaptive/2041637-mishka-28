@@ -71,15 +71,32 @@
   margin-bottom: 42px;
   width: 100%;
   height: 454px;
-  background-image: url("../img/map.png");
+  background-image: url("../img/map-mobile-1x.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/map-mobile-2x.png");
+  }
+
+  @media (min-width: @width-tablet) {
+    background-image: url("../img/map-tablet-1x.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/map-tablet-2x.png");
+    }
+  }
 
   @media (min-width: @width-desktop) {
     grid-column: 3 / 4;
     grid-row: 1 / -1;
     margin-bottom: 0;
+    background-image: url("../img/map-desktop-1x.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/map-desktop-2x.png");
+    }
   }
 }
 
