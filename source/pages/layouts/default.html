@@ -15,11 +15,11 @@
 
     <header class="site-header">
       <div class="site-header__wrapper">
-        {% if page != 'index' %}
+        {%- if page != 'index' %}
         <a class="site-header__logo" href="./index.html">
-        {% else %}
+        {%- else %}
         <a class="site-header__logo">
-        {% endif %}
+        {% endif -%}
           <picture>
             <source media="(min-width: 1150px)" srcset="./img/mishka-logo-desktop.svg" width="149" height="72">
             <source media="(min-width: 768px)" srcset="./img/mishka-logo-tablet.svg" width="113" height="46">
@@ -34,18 +34,18 @@
         <nav class="site-header__navigation site-header__navigation--nojs">
           <ul class="site-header__main-nav navigation navigation--resizable-for-main">
             <li class="navigation__item">
-              {% if page != 'catalog' %}
+              {%- if page != 'catalog' %}
               <a class="navigation__link" href="./catalog.html">Каталог товаров</a>
-              {% else %}
+              {%- else %}
               <a class="navigation__link">Каталог товаров</a>
-              {% endif %}
+              {% endif -%}
             </li>
             <li class="navigation__item">
-              {% if page != 'form' %}
+              {%- if page != 'form' %}
               <a class="navigation__link" href="./form.html">Вязание на заказ</a>
-              {% else %}
+              {%- else %}
               <a class="navigation__link">Вязание на заказ</a>
-              {% endif %}
+              {% endif -%}
             </li>
           </ul>
           <ul class="site-header__utility-nav navigation navigation--resizable-for-utility">
@@ -80,9 +80,7 @@
     </header>
 
     <main class="site-main">
-
-      {% block content %}{% endblock %}
-
+      {%- block content %}{% endblock %}
     </main>
 
     <footer class="site-footer">
@@ -126,7 +124,7 @@
       </div>
     </footer>
 
-    {% if page == 'index' or page == 'catalog' %}
+    {%- if page == 'index' or page == 'catalog' -%}
     <div class="modal">
       <form class="modal__form" action="" method="post">
         <h2 class="modal__title">Добавить в корзину</h2>
@@ -141,7 +139,7 @@
         </div>
       </form>
     </div>
-    {% endif %}
+    {%- endif -%}
 
     <script src="./js/script.js"></script>
   </body>
