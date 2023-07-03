@@ -16,9 +16,9 @@
     <header class="site-header">
       <div class="site-header__wrapper">
         {% if page != 'index' %}
-          <a class="site-header__logo" href="./index.html">
+        <a class="site-header__logo" href="./index.html">
         {% else %}
-          <a class="site-header__logo">
+        <a class="site-header__logo">
         {% endif %}
           <picture>
             <source media="(min-width: 1150px)" srcset="./img/mishka-logo-desktop.svg" width="149" height="72">
@@ -35,16 +35,16 @@
           <ul class="site-header__main-nav navigation navigation--resizable-for-main">
             <li class="navigation__item">
               {% if page != 'catalog' %}
-                <a class="navigation__link" href="./catalog.html">Каталог товаров</a>
+              <a class="navigation__link" href="./catalog.html">Каталог товаров</a>
               {% else %}
-                <a class="navigation__link">Каталог товаров</a>
+              <a class="navigation__link">Каталог товаров</a>
               {% endif %}
             </li>
             <li class="navigation__item">
               {% if page != 'form' %}
-                <a class="navigation__link" href="./form.html">Вязание на заказ</a>
+              <a class="navigation__link" href="./form.html">Вязание на заказ</a>
               {% else %}
-                <a class="navigation__link">Вязание на заказ</a>
+              <a class="navigation__link">Вязание на заказ</a>
               {% endif %}
             </li>
           </ul>
@@ -127,20 +127,20 @@
     </footer>
 
     {% if page == 'index' or page == 'catalog' %}
-      <div class="modal">
-        <form class="modal__form" action="" method="post">
-          <h2 class="modal__title">Добавить в корзину</h2>
-          <p class="modal__tip">Выберите тип:</p>
-          <div class="modal__controls">
-            <div class="modal__input-container">
-              <input class="modal__input modal__input--s" type="radio" name="size" value="size-s" checked>
-              <input class="modal__input modal__input--m" type="radio" name="size" value="size-m">
-              <input class="modal__input modal__input--l" type="radio" name="size" value="size-l">
-            </div>
-            <button class="modal__button" type="submit">Добавить</button>
+    <div class="modal">
+      <form class="modal__form" action="" method="post">
+        <h2 class="modal__title">Добавить в корзину</h2>
+        <p class="modal__tip">Выберите тип:</p>
+        <div class="modal__controls">
+          <div class="modal__input-container">
+            <input class="modal__input modal__input--s" type="radio" name="size" value="size-s" checked>
+            <input class="modal__input modal__input--m" type="radio" name="size" value="size-m">
+            <input class="modal__input modal__input--l" type="radio" name="size" value="size-l">
           </div>
-        </form>
-      </div>
+          <button class="modal__button" type="submit">Добавить</button>
+        </div>
+      </form>
+    </div>
     {% endif %}
 
     <script src="./js/script.js"></script>
