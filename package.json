@@ -18,6 +18,7 @@
     "gulp-squoosh": "^0.11.0",
     "gulp-svgmin": "^4.1.0",
     "gulp-svgstore": "^9.0.0",
+    "imagemin-webp": "^8.0.0",
     "postcss": "8.3.11",
     "stylelint": "13.13.1",
     "stylelint-config-htmlacademy": "0.1.11"
@@ -27,7 +28,7 @@
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
     "lint": "npm run editorconfig && npm run stylelint",
-    "build": "gulp styles",
+    "build": "gulp build",
     "start": "gulp"
   },
   "browserslist": [

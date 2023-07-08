@@ -1,10 +1,11 @@
+{% import 'data/_data.html' as data %}
+
 <!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Мишка</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
@@ -15,11 +16,7 @@
 
     <header class="site-header">
       <div class="site-header__wrapper">
-        {%- if page != 'index' %}
-        <a class="site-header__logo" href="./index.html">
-        {%- else %}
-        <a class="site-header__logo">
-        {% endif -%}
+        <a class="site-header__logo" {%- if page != 'index' %} href="./index.html" {% endif -%}>
           <picture>
             <source media="(min-width: 1150px)" srcset="./img/mishka-logo-desktop.svg" width="149" height="72">
             <source media="(min-width: 768px)" srcset="./img/mishka-logo-tablet.svg" width="113" height="46">
@@ -33,20 +30,11 @@
         </div>
         <nav class="site-header__navigation site-header__navigation--nojs">
           <ul class="site-header__main-nav navigation navigation--resizable-for-main">
+            {% for item in data.list %}
             <li class="navigation__item">
-              {%- if page != 'catalog' %}
-              <a class="navigation__link" href="./catalog.html">Каталог товаров</a>
-              {%- else %}
-              <a class="navigation__link">Каталог товаров</a>
-              {% endif -%}
+              <a class="navigation__link" {% if page != item.link %} href="./{{item.link}}.html" {% endif %}>{{item.title}}</a>
             </li>
-            <li class="navigation__item">
-              {%- if page != 'form' %}
-              <a class="navigation__link" href="./form.html">Вязание на заказ</a>
-              {%- else %}
-              <a class="navigation__link">Вязание на заказ</a>
-              {% endif -%}
-            </li>
+            {% endfor %}
           </ul>
           <ul class="site-header__utility-nav navigation navigation--resizable-for-utility">
             <li class="navigation__item navigation__item--seach">

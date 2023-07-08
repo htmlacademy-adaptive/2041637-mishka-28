@@ -6,25 +6,14 @@ import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
 import csso from 'gulp-csso';
 import rename from 'gulp-rename';
-import squoosh from 'gulp-squoosh';
+import squoosh from  'gulp-squoosh';
 import { deleteAsync } from 'del';
 import svgstore from 'gulp-svgstore';
 import svgo from 'gulp-svgmin';
 import cheerio from 'gulp-cheerio';
 import { compile } from 'gulp-nunjucks';
-
+import * as path from 'path';
 // Styles
-
-export const styles = () => {
-  return gulp.src('source/less/style.less', { sourcemaps: true })
-    .pipe(plumber())
-    .pipe(less())
-    .pipe(postcss([
-      autoprefixer()
-    ]))
-    .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
-    .pipe(browser.stream());
-}
 
 const optimizeStyles = () => {
   return gulp.src('source/less/style.less', { sourcemaps: true })
@@ -47,12 +36,6 @@ const html = () => {
   .pipe(gulp.dest('build'));
 }
 
-const htmlSource = () => {
-  return gulp.src('source/pages/*.html')
-  .pipe(compile())
-  .pipe(gulp.dest('source'));
-}
-
 // Scripts
 
 const scripts = () => {
@@ -64,19 +47,14 @@ const scripts = () => {
 // Images
 
 const optimizeImages = () => {
-  return gulp.src('source/img/**/*.{png,jpg}')
-  .pipe(squoosh())
-  .pipe(gulp.dest('build/img'))
-}
-
-// WebP
-
-const createWebp = () => {
-  return gulp.src('source/img/**/*.{png,jpg}')
-  .pipe(squoosh({
-  webp: {}
-  }))
-  .pipe(gulp.dest('build/img'))
+  return gulp.src('source/img/*.{png,jpg}')
+  .pipe(squoosh(({ filePath }) => ({
+    encodeOptions: {
+      webp: {},
+      ... (path.extname(filePath) === ".png" ? { oxipng: {} } : { mozjpeg: {} }),
+    },
+  })))
+  .pipe(gulp.dest('build/img'));
 }
 
 // SVG
@@ -94,27 +72,12 @@ const sprite = () => {
     },
     parserOptions: { xmlMode: true }
   }))
-  // .pipe(svgo())
+  .pipe(svgo())
   .pipe(svgstore({
   inlineSvg: true
   }))
   .pipe(rename('sprite.svg'))
   .pipe(gulp.dest('build/img'));
-}
-
-const spriteSource = () => {
-  return gulp.src('source/img/icons/*.svg')
-  .pipe(cheerio({
-    run: ($) => {
-        $('path').attr('fill', 'currentColor');
-    },
-    parserOptions: { xmlMode: true }
-  }))
-  .pipe(svgstore({
-  inlineSvg: true
-  }))
-  .pipe(rename('sprite.svg'))
-  .pipe(gulp.dest('source/img'));
 }
 
 // Copy
@@ -123,6 +86,7 @@ const copy = (done) => {
   gulp.src([
     'source/fonts/*.{woff2,woff}',
     'source/*.ico',
+    'source/img/favicons/*.*',
     ], { base: 'source' })
     .pipe(gulp.dest('build'))
     done();
@@ -134,25 +98,9 @@ const clean = () => {
   return deleteAsync('build');
 };
 
-const cleanSource = () => {
-  return deleteAsync(['source/index.html', 'source/catalog.html', 'source/form.html']);
-};
-
 // Server
 
 const server = (done) => {
-  browser.init({
-    server: {
-      baseDir: 'source'
-    },
-    cors: true,
-    notify: false,
-    ui: false,
-  });
-  done();
-}
-
-const serverBuild = (done) => {
   browser.init({
   server: {
   baseDir: 'build'
@@ -164,18 +112,11 @@ const serverBuild = (done) => {
   done();
 }
 
-// // Reload
-
-// const reload = (done) => {
-//   browser.reload();
-//   done();
-// }
-
 // Watcher
 
 const watcher = () => {
-  gulp.watch('source/less/**/*.less', gulp.series(styles));
-  gulp.watch('source/pages/**/*.html').on('change', gulp.series(cleanSource, htmlSource, browser.reload));
+  gulp.watch('source/less/**/*.less', gulp.series(optimizeStyles));
+  gulp.watch('source/pages/**/*.html').on('change', gulp.series(html, browser.reload));
 }
 
 // Build
@@ -183,18 +124,27 @@ const watcher = () => {
 export const build = gulp.series(
   clean,
   copy,
-  optimizeImages,
   gulp.parallel(
     optimizeStyles,
     html,
     scripts,
     svg,
     sprite,
-    createWebp
-  ),
-  serverBuild
+    optimizeImages,
+  )
 );
 
 export default gulp.series(
-  cleanSource, spriteSource, htmlSource, styles, server, watcher
+  clean,
+  copy,
+  gulp.parallel(
+    optimizeStyles,
+    html,
+    scripts,
+    svg,
+    sprite,
+    optimizeImages,
+  ),
+  server,
+  watcher
 );
