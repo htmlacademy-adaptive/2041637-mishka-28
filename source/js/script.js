@@ -9,9 +9,11 @@ const modal = document.querySelector('.modal');
 const modalButton = modal.querySelector('.modal__button');
 
 menuButton.addEventListener('click', () => {
-  menu.classList.contains('site-header__navigation--visible') ?
-  menu.classList.remove('site-header__navigation--visible') :
-  menu.classList.add('site-header__navigation--visible');
+  menu.classList.contains('site-header__navigation--visible') ? (
+  menu.classList.remove('site-header__navigation--visible'),
+  menuButton.classList.remove('site-header__menu-button--cross')) : (
+  menu.classList.add('site-header__navigation--visible'),
+  menuButton.classList.add('site-header__menu-button--cross'));
 });
 
 cartButtonsList.forEach((button) => {
