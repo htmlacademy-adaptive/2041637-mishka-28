@@ -15,13 +15,17 @@ menuButton.addEventListener('click', () => {
 });
 
 cartButtonsList.forEach((button) => {
-  button.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    modal.classList.add('modal--opened');
-  })
+  if (button) {
+    button.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      modal.classList.add('modal--opened');
+    })
+  }
 })
 
-modalButton.addEventListener('click', (evt) => {
-  evt.preventDefault();
-  modal.classList.remove('modal--opened');
-})
+if (modalButton) {
+  modalButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    modal.classList.remove('modal--opened');
+  })
+}

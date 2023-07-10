@@ -13,7 +13,7 @@
     @media (min-width: @width-tablet) {
       & .navigation__item {
         padding: 0;
-        padding-top: 20px;
+        padding-top: 19px;
         border: none;
       }
 
@@ -25,9 +25,9 @@
     @media (min-width: @width-desktop) {
       & .navigation__item {
         background-color: #ffffff;
-        padding-top: 32px;
-        padding-bottom: 32px;
-        padding-right: 36px;
+        padding-top: 33px;
+        padding-bottom: 31px;
+        padding-right: 35px;
       }
 
       & .navigation__item:not(:last-child) {
@@ -44,15 +44,26 @@
     @media (min-width: @width-tablet) {
       & .navigation__item {
         background-color: #ffffff;
-        padding-top: 32px;
-        padding-bottom: 32px;
+        padding-top: 33px;
+        padding-bottom: 31px;
         padding-left: 85px;
         border: 0;
         border-left: 1px solid rgba(#000000, 0.1);
+
+        &--seach {
+          width: 82px;
+          padding: 0;
+        }
       }
 
       & .navigation__seach-text {
         display: none;
+      }
+    }
+
+    @media (min-width: @width-desktop) {
+      & .navigation__item {
+        padding-left: 83px;
       }
     }
   }
@@ -89,6 +100,16 @@
   border-left: none;
   border-right: none;
   color: #000000;
+
+  &--cart {
+    width: 267px;
+  }
+
+  &--seach {
+    @media (min-width: @width-tablet) {
+      padding: 0;
+    }
+  }
 }
 
 .navigation__link {
@@ -97,11 +118,19 @@
   font-weight: 700;
   color: #000000;
   text-decoration: none;
+
+  &:hover {
+    color: rgba(#000000, 0.6);
+  }
+
+  &:active {
+    color: rgba(#000000, 0.3);
+  }
 }
 
 .navigation__icon {
   position: absolute;
-  left: 30px;
+  left: 33px;
   top: 50%;
   transform: translateY(-50%);
   opacity: 0.2;

@@ -3,17 +3,31 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 58px;
+
+  @media (min-width: @width-tablet) {
+    margin-bottom: 83px;
+  }
 }
 
 .advantages__title {
   .title;
   margin-bottom: 28px;
+
+  @media (min-width: @width-tablet) {
+    margin-bottom: 41px;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-top: 10px;
+    margin-bottom: 40px;
+    padding-left: 175px;
+  }
 }
 
 .advantages__list {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 29px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -21,7 +35,7 @@
   @media (min-width: @width-tablet) {
     flex-direction: row;
     flex-wrap: wrap;
-    column-gap: 40px;
+    row-gap: 53px;
     margin: 0 auto;
     width: 100%;
     max-width: 700px;
@@ -39,6 +53,7 @@
 
   &--flower {
     background-image: url("../img/icon-flower.svg");
+    background-position: left 8px top;
 
     @media (min-width: @width-tablet) {
       order: 1;
@@ -50,19 +65,23 @@
 
     @media (min-width: @width-tablet) {
       order: 3;
+      background-position: left top 3px;
     }
   }
 
   &--heart {
     background-image: url("../img/icon-heart.svg");
+    background-position: left 7px top 5px;
 
     @media (min-width: @width-tablet) {
       order: 5;
+      background-position: left 7px top 8px;
     }
   }
 
   &--ravel {
     background-image: url("../img/icon-ravel.svg");
+    background-position: left 3px top 3px;
 
     @media (min-width: @width-tablet) {
       order: 2;
@@ -71,21 +90,36 @@
 
   &--rocket {
     background-image: url("../img/icon-rocket.svg");
+    background-position: left top 3px;
+    margin-left: -6px;
+    padding-left: 6px;
+    padding-top: 53px;
+
+    .advantages__title {
+      padding-left: 6px;
+    }
 
     @media (min-width: @width-tablet) {
       order: 4;
+      background-position: left top 6px;
     }
   }
 
   &--present {
     background-image: url("../img/icon-present.svg");
+    background-position: left 3px top 3px;
+    padding-top: 55px;
 
     @media (min-width: @width-tablet) {
       order: 6;
+      background-position: left 3px top 4px;
     }
   }
 
   @media (min-width: @width-tablet) {
     flex: 1 1 250px;
+    padding-top: 57px;
+    font-size: 20px;
+    line-height: 22px;
   }
 }

@@ -11,10 +11,10 @@
 
       <form class="form" method="post" action="https://echo.htmlacademy.ru/">
         <p class="form__description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
-        <div class="form__category">
+        <div class="form__category form__category--type">
           <fieldset class="form__category-wrapper">
             <h2 class="form__category-title">
-              <span class="form__category-name">Тип</span>
+              <span class="form__category-name form__category-name--no-padding">Тип</span>
             </h2>
             <div class="form__category-content">
               <label class="form__label">
@@ -30,12 +30,12 @@
             </div>
           </fieldset>
         </div>
-        <div class="form__category">
-          <fieldset class="form__category-wrapper ">
+        <div class="form__category form__category--color">
+          <fieldset class="form__category-wrapper form__category-wrapper--color">
             <h2 class="form__category-title">
-              <span class="form__category-name">Цвет</span>
+              <span class="form__category-name form__category-name--no-padding">Цвет</span>
             </h2>
-            <div class="form__category-content form__category-content--transformed">
+            <div class="form__category-content form__category-content--transformed form__category-content--color">
               <label class="form__label">
                 <input class="form__input visually-hidden" type="checkbox" name="color-white">
                 <span class="form__marker"></span>
@@ -69,12 +69,12 @@
             </div>
           </fieldset>
         </div>
-        <div class="form__category">
+        <div class="form__category form__category--small-padding">
           <fieldset class="form__category-wrapper">
-            <h2 class="form__category-title">
+            <h2 class="form__category-title form__category-title--small-padding">
               <span class="form__category-name">Фио</span>
             </h2>
-            <div class="form__category-content">
+            <div class="form__category-content form__category-content--small-gap">
               <div class="form__item">
                 <label class="form__label form__label--no-padding" for="user-name">Имя:</label>
                 <input class="form__input-text" type="text" placeholder="Введите ваше имя*" id="user-name" name="user-name" required>
@@ -90,20 +90,20 @@
             </div>
           </fieldset>
         </div>
-        <div class="form__category">
+        <div class="form__category form__category--big-gap form__category--small-padding form__category--email-phone">
           <div class="form__category-wrapper">
-            <label class="form__category-title" for="phone">
+            <label class="form__category-title form__category-title--no-padding" for="phone">
               <span class="form__category-name">Тел</span>
             </label>
             <div class="form__input-wrapper form__input-wrapper--phone">
               <input class="form__input-text form__input-text--phone" type="tel" id="phone" name="user-phone" placeholder="+7 ХХХ ХХХ ХХ ХХ*">
-              <svg class="form__input-icon" width="25" height="24">
+              <svg class="form__input-icon form__input-icon--phone" width="25" height="24">
                 <use href="./img/sprite.svg#icon-phone">
               </svg>
             </div>
           </div>
           <div class="form__category-wrapper">
-            <label class="form__category-title" for="email">
+            <label class="form__category-title form__category-title--no-padding" for="email">
               <span class="form__category-name">E-mail</span>
             </label>
             <div class="form__input-wrapper form__input-wrapper--email">
@@ -114,9 +114,9 @@
             </div>
           </div>
         </div>
-        <div class="form__category">
+        <div class="form__category form__category--last">
           <div class="form__category-wrapper">
-            <label class="form__category-title" for="comment">
+            <label class="form__category-title form__category-title--addition" for="comment">
               <span class="form__category-name">Доп</span>
             </label>
             <textarea class="form__input-textfield" id="comment" name="user-comment" placeholder="Опишите все ваши пожелания к заказу"></textarea>
@@ -125,7 +125,7 @@
         <div class="form__controls">
           <div class="form__category-wrapper">
             <span class="form__requirements">*Поля обязательны для заполнения</span>
-            <button class="form__button" type="submit">Отправить</button>
+            <button class="form__button" type="submit">Отправить заказ</button>
           </div>
         </div>
       </form>

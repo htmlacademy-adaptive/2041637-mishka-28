@@ -3,11 +3,17 @@
   display: flex;
   flex-direction: column;
   margin-top: 31px;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
   row-gap: 30px;
+
+  @media (min-width: @width-tablet) {
+    row-gap: 52px;
+    margin-bottom: 52px;
+  }
 
   @media (min-width: @width-desktop) {
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 50px;
   }
 }

@@ -13,6 +13,14 @@
     flex-direction: column;
     width: 316px;
   }
+
+  &:hover {
+    box-shadow: 0 5px 12px 2px #0000003e;
+  }
+
+  &:active {
+    box-shadow: 0 2px 7px 2px #00000068;
+  }
 }
 
 .product-card__image-wrapper {
@@ -23,14 +31,12 @@
     height: 334px;
   }
 
-  @media (min-width: @width-tablet) {
+  @media (min-width: @width-desktop) {
     height: 462px;
   }
 }
 
 .product-card__image {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -38,20 +44,62 @@
   display: flex;
   flex-direction: column;
   padding: 28px;
+  padding-top: 26px;
+  padding-left: 27px;
+  padding-bottom: 25px;
+
+  @media (min-width: @width-tablet) {
+    padding-left: 32px;
+    padding-right: 34px;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-left: 27px;
+    padding-right: 34px;
+  }
 }
 
 .product-card__data {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+
+  @media (min-width: @width-tablet) {
+    margin-bottom: auto;
+  }
+
+  @media (min-width: @width-desktop) {
+    flex-grow: 1;
+  }
 }
 
-.product-card__link {
+.product-card__title {
+  display: flex;
+  margin: 0;
   margin-bottom: 6px;
   font-size: 17px;
   line-height: 24px;
   font-weight: 700;
+
+  @media (min-width: @width-tablet) {
+    margin-bottom: 7px;
+    font-size: 20px;
+    line-height: 24px;
+    padding-right: 24px;
+  }
+}
+
+.product-card__link {
   text-decoration: none;
   color: #000000;
+
+  &:hover {
+    color: rgba(#000000, 0.6);
+  }
+
+  &:active {
+    color: rgba(#000000, 0.3);
+  }
 }
 
 .product-card__params {
@@ -60,30 +108,44 @@
   line-height: 30px;
   font-weight: 400;
   color: #444444;
-  margin-bottom: 17px;
+  padding-bottom: 18px;
+
+  @media (min-width: @width-tablet) {
+    font-size: 15px;
+    line-height: 30px;
+  }
 }
 
 .product-card__controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 22px;
-  padding-bottom: 26px;
+  margin-right: -2px;
   border-top: 1px solid #ececec;
+  padding-top: 23px;
+
+  @media (min-width: @width-tablet) {
+    padding-top: 24px;
+  }
 }
 
 .product-card__price {
   font-size: 15px;
   line-height: 24px;
   font-weight: 700;
+
+  @media (min-width: @width-tablet) {
+    font-size: 17px;
+  }
 }
 
 .product-card__cart {
-  width: 20px;
-  height: 19px;
+  width: 21px;
+  height: 100%;
   color: #000000;
   opacity: 0.2;
   border: none;
+  padding-left: 2px;
 
   &:hover {
     color: #63d1bb;

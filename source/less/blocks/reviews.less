@@ -1,11 +1,29 @@
 .reviews {
+  margin-bottom: 39px;
+
   @media (min-width: @width-tablet) {
     position: relative;
-    margin-bottom: 46px;
+    margin-bottom: 45px;
+    padding-top: 79px;
+    background-image: image-set(
+      url("../img/reviews-bg-1x.webp") type("image/webp") 1x,
+      url("../img/reviews-bg-1x.png") type("image/png") 1x
+    );
+    background-size: 350px 457px;
+    background-repeat: no-repeat;
+    background-position: left top;
+
+    @media (min-resolution: 2dppx) {
+      background-image: image-set(
+        url("../img/reviews-bg-2x.webp") type("image/webp") 2x,
+        url("../img/reviews-bg-2x.png") type("image/png") 2x
+      );
+    }
   }
 
   @media (min-width: @width-desktop) {
     margin-bottom: 71px;
+    background-position: left calc(50% - 350px) top 7px;
   }
 
   &::before {
@@ -38,7 +56,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 132px;
+    padding-bottom: 100px;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-bottom: 153px;
   }
 }
 
@@ -48,7 +70,13 @@
 
   @media (min-width: @width-tablet) {
     order: 1;
+    padding-top: 6px;
+    margin-bottom: 0;
     width: 270px;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-left: 175px;
   }
 }
 
@@ -63,6 +91,18 @@
   @media (min-width: @width-tablet) {
     order: 3;
     width: 100%;
+    font-size: 17px;
+    margin-bottom: 62px;
+
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-left: 175px;
+    padding-right: 62px;
+    margin-bottom: 44px;
   }
 }
 
@@ -74,13 +114,26 @@
     order: 4;
     width: 270px;
   }
+
+  @media (min-width: @width-desktop) {
+    padding-left: 174px;
+  }
 }
 
 .reviews__author-name {
+  margin-bottom: 3px;
   font-size: 17px;
   line-height: 24px;
   font-weight: 700;
   color: #000000;
+
+  @media (min-width: @width-tablet) {
+    letter-spacing: 0.6px;
+  }
+
+  @media (min-width: @width-desktop) {
+    letter-spacing: 0.02px;
+  }
 }
 
 .reviews__nickname {
@@ -106,9 +159,10 @@
   flex-grow: 1;
   height: 52px;
   background-color: #ffffff;
-  background-position: center;
+  background-position: center right 42px;
   background-repeat: no-repeat;
   border: 1px solid #ececec;
+  cursor: pointer;
 
   &--left {
     background-image: url("../img/arrow-left.svg");
@@ -118,15 +172,38 @@
   &--right {
     background-image: url("../img/arrow-right.svg");
   }
+
+  @media (min-width: @width-tablet) {
+    background-position: left 18px top 16px;
+    border: none;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .reviews__button {
   .button;
   margin-bottom: 51px;
+  padding-top: 15px;
+  padding-bottom: 13px;
 
   @media (min-width: @width-tablet) {
     order: 2;
     width: 175px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: @width-desktop) {
+    order: 2;
+    width: 175px;
+    margin-top: 7px;
+    margin-bottom: 40px;
   }
 }
 

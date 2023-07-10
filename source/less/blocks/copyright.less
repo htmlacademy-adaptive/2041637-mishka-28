@@ -1,20 +1,36 @@
 .copyright {
   display: flex;
   column-gap: 27px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .copyright__text {
+  align-self: flex-start;
   display: block;
+  padding-top: 7px;
+  padding-left: 39px;
   font-size: 19px;
   line-height: 18px;
   font-weight: 700;
+
+  @media (min-width: @width-tablet) {
+    padding-left: 0;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-right: 2px;
+  }
 }
 
 .copyright__link {
   display: block;
+  padding-right: 39px;
   color: #63d1bb;
+
+  @media (min-width: @width-tablet) {
+    padding-right: 0;
+  }
 
   &:hover {
     color: #45c1ae;
