@@ -31,3 +31,4 @@ if (modalButton) {
     modal.classList.remove('modal--opened');
   })
 }
+
