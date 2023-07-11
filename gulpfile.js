@@ -117,6 +117,7 @@ const server = (done) => {
 const watcher = () => {
   gulp.watch('source/less/**/*.less', gulp.series(optimizeStyles));
   gulp.watch('source/pages/**/*.html').on('change', gulp.series(html, browser.reload));
+  gulp.watch('source/js/*.less', gulp.series(scripts));
 }
 
 // Build

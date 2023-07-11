@@ -6,7 +6,7 @@ const cartButtons = document.querySelectorAll('.product-card__cart');
 const weeklyButton = document.querySelector('.weekly__button');
 const cartButtonsList = [...cartButtons, weeklyButton];
 const modal = document.querySelector('.modal');
-const modalButton = modal.querySelector('.modal__button');
+const modalButton = modal?.querySelector('.modal__button');
 
 menuButton.addEventListener('click', () => {
   menu.classList.contains('site-header__navigation--visible') ? (

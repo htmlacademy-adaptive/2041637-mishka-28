@@ -41,8 +41,8 @@
   .wrapper;
   display: flex;
   justify-content: flex-end;
-  padding-top: 32px;
-  padding-bottom: 33px;
+  align-items: center;
+  height: 79px;
 
   @media (min-width: @width-tablet) {
     display: none;
@@ -51,11 +51,13 @@
 
 .site-header__menu-button {
   display: block;
-  width: 20px;
-  height: 14px;
+  width: 21px;
+  height: 21px;
   background-image: url("../img/menu-button.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 20px 14px;
+  background-color: transparent;
   border: none;
 
   &--nojs {
@@ -63,10 +65,8 @@
   }
 
   &--cross {
-    margin-top: -3px;
-    width: 21px;
-    height: 20px;
     background-image: url("../../img/menu-close.svg");
+    background-size: 21px 20px;
   }
 }
 
