@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 55px;
+
+  @media (min-width: @width-tablet) {
+    margin-bottom: 50px;
+  }
 }
 
 .form__description {
@@ -10,11 +14,19 @@
   line-height: 24px;
   font-weight: 400;
   color: #444444;
-  margin-bottom: 37px;
+  margin-bottom: 29px;
   margin-top: 17px;
+
+  @media (min-width: @width-tablet) {
+    margin-top: -13px;
+    font-size: 17px;
+    line-height: 30px;
+  }
 
   @media (min-width: @width-desktop) {
     padding-left: 225px;
+    padding-right: 198px;
+    margin-bottom: 26px;
   }
 }
 
@@ -26,10 +38,58 @@
 
   @media (min-width: @width-tablet) {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 66px;
 
     &:nth-child(odd) {
       background-color: #f1f1f1;
+    }
+  }
+
+  &--small-padding {
+    padding-bottom: 32px;
+
+    @media (min-width: @width-tablet) {
+      padding-top: 46px;
+      padding-bottom: 46px;
+    }
+  }
+
+  &--big-gap {
+    row-gap: 35px;
+
+    @media (min-width: @width-tablet) {
+      row-gap: 23px;
+    }
+  }
+
+  &--last {
+    padding-bottom: 17px;
+
+    @media (min-width: @width-tablet) {
+      padding-bottom: 53px;
+    }
+
+    @media (min-width: @width-desktop) {
+      padding-bottom: 49px;
+    }
+  }
+
+  &--color {
+    @media (min-width: @width-tablet) {
+      padding-top: 67px;
+    }
+  }
+
+  &--email-phone {
+    @media (min-width: @width-tablet) {
+      row-gap: 18px;
+    }
+  }
+
+  &--type {
+    @media (min-width: @width-desktop) {
+      padding-top: 55px;
+      padding-bottom: 63px;
     }
   }
 }
@@ -48,7 +108,7 @@
 .form__category-content {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 25px;
 
   @media (min-width: @width-tablet) {
     flex-grow: 1;
@@ -60,14 +120,33 @@
   }
 
   &--transformed {
+    row-gap: 43px;
+
     @media (min-width: @width-tablet) {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      row-gap: 57px;
+      column-gap: 22px;
     }
 
     @media (min-width: @width-desktop) {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &--small-gap {
+    row-gap: 20px;
+
+    @media (min-width: @width-tablet) {
+      row-gap: 18px;
+    }
+  }
+
+  &--color {
+    @media (min-width: @width-desktop) {
+      padding-right: 88px;
+      column-gap: 1px;
     }
   }
 }
@@ -93,6 +172,7 @@
 
   @media (min-width: @width-tablet) {
     width: 167px;
+    align-items: start;
 
     &::after {
       display: none;
@@ -102,10 +182,23 @@
   @media (min-width: @width-desktop) {
     width: 175px;
   }
+
+  &--small-padding {
+    padding-bottom: 29px;
+  }
+
+  &--no-padding {
+    padding-bottom: 2px;
+  }
+
+  &--addition {
+    padding-bottom: 22px;
+  }
 }
 
 .form__category-name {
-  margin-right: 20px;
+  min-width: 41px;
+  margin-right: 19px;
   font-size: 17px;
   line-height: 16px;
   font-weight: 700;
@@ -113,7 +206,15 @@
   color: #62d1ba;
 
   @media (min-width: @width-tablet) {
-    padding-top: 16px;
+    padding-top: 20px;
+
+    &--no-padding {
+      padding-top: 0;
+    }
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-left: 61px;
   }
 }
 
@@ -136,13 +237,19 @@
   line-height: 18px;
   font-weight: 700;
 
-  &--no-padding {
-    padding-left: 0;
-  }
-
   @media (min-width: @width-tablet) {
+    padding-left: 81px;
     font-size: 18px;
     line-height: 19px;
+    letter-spacing: 0.6px;
+  }
+
+  &--no-padding {
+    padding-left: 0;
+
+    @media (min-width: @width-tablet) {
+      padding-left: 0;
+    }
   }
 }
 
@@ -158,8 +265,33 @@
   .form__input-icon {
     position: absolute;
     top: 50%;
+    right: 3px;
     transform: translateY(-50%);
-    right: 0;
+
+    @media (min-width: @width-tablet) {
+      top: calc(50% + 1px);
+      right: 21px;
+    }
+
+    @media (min-width: @width-desktop) {
+      top: calc(50% + 1px);
+      right: 4px;
+    }
+
+    &--phone {
+      top: calc(50% - 3px);
+      right: 6px;
+
+      @media (min-width: @width-tablet) {
+        top: calc(50% - 2px);
+        right: 25px;
+      }
+
+      @media (min-width: @width-desktop) {
+        top: calc(50% + -2px);
+        right: 8px;
+      }
+    }
   }
 }
 
@@ -215,30 +347,63 @@
   transform: translateY(50%);
 
   &--radio {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+
+    @media (min-width: @width-tablet) {
+      left: 3px;
+    }
   }
 
   @media (min-width: @width-tablet) {
     width: 52px;
     height: 52px;
+
+    &--radio {
+      width: 50px;
+      height: 50px;
+      border: 3px solid #444444;
+    }
+  }
+
+  &:hover {
+    border: 2px solid #62d1ba;
+  }
+
+  &:active {
+    border: 2px solid rgba(#444444, 0.3);
   }
 }
 
 .form__input-text {
   flex-grow: 1;
   padding-top: 17px;
-  padding-bottom: 17px;
+  padding-bottom: 15px;
+  margin-bottom: 2px;
   border: none;
   border-bottom: 2px solid #000000;
   font-size: 17px;
   line-height: 18px;
   font-weight: 400;
+  color: #444444;
   background-color: inherit;
+
+  @media (min-width: @width-tablet) {
+    font-size: 19px;
+    line-height: 18px;
+    padding-left: 17px;
+    letter-spacing: 0.6px;
+  }
+
+  &--phone {
+    letter-spacing: -1px;
+  }
 
   &--phone,
   &--mail {
+    padding-bottom: 17px;
+
     @media (min-width: @width-desktop) {
       width: 100%;
       max-width: 700px;
@@ -249,6 +414,15 @@
   &:focus + .form__input-icon {
     color: #62d1ba;
     opacity: 1;
+  }
+
+  &:hover,
+  &:active {
+    border-bottom: 2px solid #62d1ba;
+  }
+
+  &::placeholder {
+    color: rgba(#000000, 0.3);
   }
 }
 
@@ -261,11 +435,20 @@
   font-size: 17px;
   line-height: 18px;
   font-weight: 400;
+  color: #444444;
   resize: none;
   border: 2px solid #000000;
 
+  @media (min-width: @width-tablet) {
+    letter-spacing: 1.1px;
+  }
+
   @media (min-width: @width-desktop) {
     max-width: 700px;
+  }
+
+  &::placeholder {
+    color: rgba(#000000, 0.3);
   }
 }
 
@@ -300,11 +483,16 @@
   @media (min-width: @width-tablet) {
     order: 2;
     margin-bottom: 0;
+    font-size: 17px;
+    line-height: 30px;
   }
 }
 
 .form__button {
   .button;
+  padding-top: 17px;
+  padding-bottom: 12px;
+  letter-spacing: -0.6px;
 
   @media (min-width: @width-tablet) {
     order: 1;

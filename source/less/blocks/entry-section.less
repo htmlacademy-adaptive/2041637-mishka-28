@@ -4,6 +4,14 @@
   background-color: #f1f1f1;
   border-top: 1px solid rgba(#000000, 0.1);
 
+  @media (min-width: @width-tablet) {
+    margin-bottom: 67px;
+  }
+
+  @media (min-width: @width-desktop) {
+    margin-bottom: 111px;
+  }
+
   &::before {
     @media (min-width: @width-tablet) {
       position: absolute;
@@ -22,37 +30,62 @@
       top: calc(100% - 34px);
       height: 34px;
       background-image: url("../img/zigzag-desktop.svg");
+      background-size: 1150px 34px;
     }
   }
 
   &--index {
     background-color: #f9f9f9;
-    background-image: url("../img/hero-mobile-1x.png");
+    background-image: image-set(
+      url("../img/hero-mobile-1x.webp") type("image/webp") 1x,
+      url("../img/hero-mobile-1x.png") type("image/png") 1x
+    );
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 320px auto;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/hero-mobile-2x.png");
+      background-image: image-set(
+        url("../img/hero-mobile-2x.webp") type("image/webp") 2x,
+        url("../img/hero-mobile-2x.png") type("image/png") 2x
+      );
     }
 
     @media (min-width: @width-tablet) {
       margin-bottom: 40px;
-      background-image: url("../img/hero-tablet-1x.png");
+      background-image: image-set(
+        url("../img/hero-tablet-1x.webp") type("image/webp") 1x,
+        url("../img/hero-tablet-1x.png") type("image/png") 1x
+      );
       background-size: 768px auto;
 
       @media (min-resolution: 2dppx) {
-        background-image: url("../img/hero-tablet-2x.png");
+        background-image: image-set(
+          url("../img/hero-tablet-2x.webp") type("image/webp") 2x,
+          url("../img/hero-tablet-2x.png") type("image/png") 2x
+        );
       }
     }
 
     @media (min-width: @width-desktop) {
       margin-bottom: 54px;
-      background-image: url("../img/hero-desktop-1x.webp");
+      background-image: image-set(
+        url("../img/hero-desktop-1x.webp") type("image/webp") 1x,
+        url("../img/hero-desktop-1x.png") type("image/png") 1x
+      );
       background-size: 1150px auto;
 
       @media (min-resolution: 2dppx) {
-        background-image: url("../img/hero-desktop-2x.webp");
+        background-image: image-set(
+          url("../img/hero-desktop-2x.webp") type("image/webp") 2x,
+          url("../img/hero-desktop-2x.png") type("image/png") 2x
+        );
+      }
+    }
+
+    &::before {
+      @media (min-width: @width-tablet) {
+        background-size: 1250px 34px;
       }
     }
   }
@@ -91,7 +124,7 @@
 .entry-section__title {
   .title;
   margin: 0 auto;
-  max-width: 244px;
+  max-width: 247px;
   text-align: center;
   font-size: 27px;
   line-height: 30px;

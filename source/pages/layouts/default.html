@@ -1,0 +1,138 @@
+{% import 'data/_data.html' as data %}
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML Academy: Мишка</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/favicon-180.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    {% if page == 'index' %}
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=e70fcb16-4254-4a37-8952-686a9cd15109&lang=ru_RU"></script>
+    <script src="./js/map.js"></script>
+    {% endif %}
+  </head>
+  <body class="site-body">
+
+    <header class="site-header">
+      <div class="site-header__wrapper">
+        <a class="site-header__logo" {%- if page != 'index' %} href="./index.html" {% endif -%}>
+          <picture>
+            <source media="(min-width: 1150px)" srcset="./img/mishka-logo-desktop.svg" width="149" height="72">
+            <source media="(min-width: 768px)" srcset="./img/mishka-logo-tablet.svg" width="113" height="46">
+            <img src="./img/mishka-logo-mobile.svg" width="86" height="35" alt="Логотип">
+          </picture>
+        </a>
+        <div class="site-header__mobile-header">
+          <button class="site-header__menu-button site-header__menu-button--nojs" type="button">
+            <span class="visually-hidden">Меню сайта</span>
+          </button>
+        </div>
+        <nav class="site-header__navigation site-header__navigation--nojs">
+          <ul class="site-header__main-nav navigation navigation--resizable-for-main">
+            {% for item in data.list %}
+            <li class="navigation__item">
+              <a class="navigation__link" {% if page != item.link %} href="./{{item.link}}.html" {% endif %}>{{item.title}}</a>
+            </li>
+            {% endfor %}
+          </ul>
+          <ul class="site-header__utility-nav navigation navigation--resizable-for-utility">
+            <li class="navigation__item navigation__item--seach">
+              <a class="navigation__link" href="">
+                <svg class="navigation__icon" width="18" height="18">
+                  <use href="./img/sprite.svg#icon-seach" />
+                </svg>
+                <span class="navigation__seach-text">Поиск по сайту</span>
+              </a>
+            </li>
+            <li class="navigation__item navigation__item--cart">
+              <a class="navigation__link" href="">
+                <svg class="navigation__icon" width="21" height="18">
+                  <use href="./img/sprite.svg#icon-cart" />
+                </svg>
+                Корзина: пока пуста
+              </a>
+            </li>
+          </ul>
+          <ul class="site-header__secondary-nav navigation navigation--resizable-for-secondary navigation--hidden">
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Новые поступления</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="">Распродажа</a>
+            </li>
+          </ul>
+          <p class="site-header__delivary">Бесплатная доставка по России</p>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      {%- block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__wrapper">
+        <a href="" class="site-footer__logo">
+          <svg class="site-footer__logo-image" width="102" height="35">
+            <use href="./img/sprite.svg#footer-logo" />
+          </svg>
+        </a>
+        <ul class="site-footer__socials socials">
+          <li class="socials__item">
+            <a class="socials__link" href="">
+              <svg width="29" height="23">
+                <use href="./img/sprite.svg#vkontakte" />
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="">
+              <svg width="29" height="23">
+                <use href="./img/sprite.svg#youtube" />
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="">
+              <svg width="29" height="23">
+                <use href="./img/sprite.svg#telegram" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="site-footer__copyright copyright">
+          <span class="copyright__text">Разработано</span>
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
+            <svg width="27" height="35">
+              <use href="./img/sprite.svg#htmlacademy" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    {%- if page == 'index' or page == 'catalog' -%}
+    <div class="modal">
+      <form class="modal__form" method="post" action="https://echo.htmlacademy.ru/">
+        <h2 class="modal__title">Добавить в корзину</h2>
+        <p class="modal__tip">Выберите размер:</p>
+        <div class="modal__controls">
+          <div class="modal__input-container">
+            <input class="modal__input modal__input--s" type="radio" name="size" value="size-s" checked>
+            <input class="modal__input modal__input--m" type="radio" name="size" value="size-m">
+            <input class="modal__input modal__input--l" type="radio" name="size" value="size-l">
+          </div>
+          <button class="modal__button" type="submit">Добавить</button>
+        </div>
+      </form>
+    </div>
+    {%- endif -%}
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

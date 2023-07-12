@@ -5,6 +5,11 @@
   padding: 0;
   list-style: none;
 
+  @media (min-width: @width-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   &--hidden {
     display: none;
   }
@@ -13,7 +18,7 @@
     @media (min-width: @width-tablet) {
       & .navigation__item {
         padding: 0;
-        padding-top: 20px;
+        padding-top: 19px;
         border: none;
       }
 
@@ -25,9 +30,9 @@
     @media (min-width: @width-desktop) {
       & .navigation__item {
         background-color: #ffffff;
-        padding-top: 32px;
-        padding-bottom: 32px;
-        padding-right: 36px;
+        padding-top: 33px;
+        padding-bottom: 31px;
+        padding-right: 35px;
       }
 
       & .navigation__item:not(:last-child) {
@@ -44,15 +49,28 @@
     @media (min-width: @width-tablet) {
       & .navigation__item {
         background-color: #ffffff;
-        padding-top: 32px;
-        padding-bottom: 32px;
-        padding-left: 85px;
+        padding-top: 33px;
+        padding-bottom: 31px;
+        padding-left: 84px;
+        margin-right: -4px;
         border: 0;
         border-left: 1px solid rgba(#000000, 0.1);
+
+        &--seach {
+          width: 84px;
+          padding: 0;
+        }
       }
 
       & .navigation__seach-text {
         display: none;
+      }
+    }
+
+    @media (min-width: @width-desktop) {
+      & .navigation__item {
+        padding-left: 85px;
+        margin-right: -2px;
       }
     }
   }
@@ -70,11 +88,6 @@
       }
     }
   }
-
-  @media (min-width: @width-tablet) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
 }
 
 .navigation__item {
@@ -84,11 +97,21 @@
   align-items: center;
   padding-left: 76px;
   padding-top: 28px;
-  padding-bottom: 26px;
+  padding-bottom: 25px;
   border: 1px solid #ececec;
   border-left: none;
   border-right: none;
   color: #000000;
+
+  &--cart {
+    width: 270px;
+  }
+
+  &--seach {
+    @media (min-width: @width-tablet) {
+      padding: 0;
+    }
+  }
 }
 
 .navigation__link {
@@ -97,14 +120,23 @@
   font-weight: 700;
   color: #000000;
   text-decoration: none;
+
+  &:hover {
+    color: rgba(#000000, 0.6);
+  }
+
+  &:active {
+    color: rgba(#000000, 0.3);
+  }
 }
 
 .navigation__icon {
   position: absolute;
-  left: 30px;
+  left: 33px;
   top: 50%;
   transform: translateY(-50%);
   opacity: 0.2;
+  color: #000000;
 
   &:hover {
     color: #63d1bb;
