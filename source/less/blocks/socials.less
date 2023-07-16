@@ -1,11 +1,20 @@
 .socials {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: 29px;
   justify-content: center;
   margin: 0;
   padding-left: 0;
   list-style: none;
+
+  @media (min-width: @width-tablet) {
+    max-width: 320px;
+  }
+
+  @media (min-width: @width-tablet) {
+    max-width: 580px;
+  }
 }
 
 .socials__link {
