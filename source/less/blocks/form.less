@@ -46,16 +46,16 @@
   }
 
   &--small-padding {
-    padding-bottom: 32px;
+    padding-bottom: 35px;
 
     @media (min-width: @width-tablet) {
       padding-top: 46px;
-      padding-bottom: 46px;
+      padding-bottom: 50px;
     }
   }
 
   &--big-gap {
-    row-gap: 35px;
+    row-gap: 36px;
 
     @media (min-width: @width-tablet) {
       row-gap: 23px;
@@ -63,7 +63,7 @@
   }
 
   &--last {
-    padding-bottom: 17px;
+    padding-bottom: 18px;
 
     @media (min-width: @width-tablet) {
       padding-bottom: 53px;
@@ -82,7 +82,11 @@
 
   &--email-phone {
     @media (min-width: @width-tablet) {
-      row-gap: 18px;
+      row-gap: 22px;
+    }
+
+    @media (min-width: @width-desktop) {
+      row-gap: 21px;
     }
   }
 
@@ -136,10 +140,10 @@
   }
 
   &--small-gap {
-    row-gap: 20px;
+    row-gap: 23px;
 
     @media (min-width: @width-tablet) {
-      row-gap: 18px;
+      row-gap: 17px;
     }
   }
 
@@ -248,7 +252,8 @@
     padding-left: 0;
 
     @media (min-width: @width-tablet) {
-      padding-left: 0;
+      padding-top: 3px;
+      padding-left: 1px;
     }
   }
 }
@@ -267,6 +272,7 @@
     top: 50%;
     right: 3px;
     transform: translateY(-50%);
+    opacity: 0.2;
 
     @media (min-width: @width-tablet) {
       top: calc(50% + 1px);
@@ -314,9 +320,17 @@
       background-image: url("../img/tick.svg");
     }
   }
+
+  &:focus + .form__marker {
+    outline: 2px solid #000000;
+  }
 }
 
 .form__input[type="radio"] {
+  &:focus + .form__marker {
+    outline: 2px solid #000000;
+  }
+
   &:checked + .form__marker::before {
     position: absolute;
     top: 50%;
@@ -379,10 +393,10 @@
 .form__input-text {
   flex-grow: 1;
   padding-top: 17px;
-  padding-bottom: 15px;
-  margin-bottom: 2px;
+  padding-bottom: 14px;
   border: none;
   border-bottom: 2px solid #000000;
+  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
   font-size: 17px;
   line-height: 18px;
   font-weight: 400;
@@ -393,18 +407,20 @@
     font-size: 19px;
     line-height: 18px;
     padding-left: 17px;
-    letter-spacing: 0.6px;
-  }
-
-  &--phone {
-    letter-spacing: -1px;
   }
 
   &--phone,
   &--mail {
     padding-bottom: 17px;
 
+    @media (min-width: @width-tablet) {
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+
     @media (min-width: @width-desktop) {
+      padding-top: 14px;
+      padding-bottom: 14px;
       width: 100%;
       max-width: 700px;
     }
@@ -419,6 +435,7 @@
   &:hover,
   &:active {
     border-bottom: 2px solid #62d1ba;
+    outline: none;
   }
 
   &::placeholder {
@@ -440,11 +457,17 @@
   border: 2px solid #000000;
 
   @media (min-width: @width-tablet) {
-    letter-spacing: 1.1px;
+    font-size: 19px;
   }
 
   @media (min-width: @width-desktop) {
     max-width: 700px;
+  }
+
+  &:hover,
+  &:active {
+    border: 2px solid #62d1ba;
+    outline: none;
   }
 
   &::placeholder {
@@ -490,8 +513,8 @@
 
 .form__button {
   .button;
-  padding-top: 17px;
-  padding-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 13px;
   letter-spacing: -0.6px;
 
   @media (min-width: @width-tablet) {

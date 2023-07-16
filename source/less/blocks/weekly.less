@@ -1,27 +1,34 @@
 .weekly {
+  position: relative;
   margin-bottom: 31px;
 
   @media (min-width: @width-tablet) {
-    position: relative;
     margin-bottom: 56px;
   }
 
   &::before {
+    position: absolute;
+    top: calc(100% - 6px);
+    left: 0;
+    width: 100%;
+    height: 6px;
+    content: "";
+    background-image: url("../img/zigzag-grey-mobile.svg");
+    background-repeat: repeat-x;
+    background-position: center;
+
     @media (min-width: @width-tablet) {
-      position: absolute;
       top: calc(100% - 17px);
-      left: 0;
-      width: 100%;
       height: 17px;
-      content: "";
       background-image: url("../img/zigzag-grey.svg");
-      background-repeat: repeat-x;
-      background-position: center;
     }
 
     @media (min-width: @width-desktop) {
       top: calc(100% - 23px);
       height: 23px;
+      width: 1050px;
+      left: 50%;
+      transform: translateX(-50%);
       background-image: url("../img/zigzag-grey-desktop.svg");
     }
   }
@@ -34,18 +41,14 @@
   padding-top: 31px;
 
   @media (min-width: @width-tablet) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 34px;
-    padding-bottom: 69px;
+    display: grid;
+    grid-template-columns: 50% 1fr 25%;
+    padding-bottom: 64px;
   }
 
   @media (min-width: @width-desktop) {
-    display: grid;
     grid-template-columns: 175px 1fr 50%;
-    padding-bottom: 96px;
+    padding-bottom: 90px;
   }
 }
 
@@ -55,8 +58,8 @@
   margin-bottom: 3px;
 
   @media (min-width: @width-tablet) {
-    max-width: 600px;
-    flex-grow: 1;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
   }
 
   @media (min-width: @width-desktop) {
@@ -76,8 +79,11 @@
   color: #63d1bb;
 
   @media (min-width: @width-tablet) {
-    margin-right: 13px;
-    margin-bottom: 6px;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    justify-self: end;
+    padding-right: 13px;
+    padding-top: 5px;
     line-height: 17px;
     width: 100px;
     text-align: center;
@@ -86,30 +92,20 @@
   @media (min-width: @width-desktop) {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
-    padding-top: 57px;
+    padding-top: 69px;
     padding-left: 32px;
     padding-right: 42px;
     text-align: center;
   }
 }
 
-.weekly__card {
+.weekly__data {
   display: flex;
   flex-direction: column;
-  width: 100%;
-
-  @media (min-width: @width-tablet) {
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: 292px 334px;
-    grid-template-rows: auto auto 1fr auto;
-  }
 
   @media (min-width: @width-desktop) {
-    grid-column: 2 / 4;
-    grid-row: 1 / 3;
-    display: grid;
-    grid-template-columns: 292px 525px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
   }
 }
 
@@ -124,13 +120,15 @@
   @media (min-width: @width-tablet) {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
+    padding-top: 30px;
+    width: 281px;
     font-size: 17px;
     line-height: 30px;
     margin-bottom: 31px;
   }
 
   @media (min-width: @width-desktop) {
-    padding-top: 153px;
+    padding-top: 33px;
     margin-bottom: 43px;
   }
 }
@@ -141,11 +139,16 @@
   row-gap: 4px;
   margin-bottom: 26px;
 
+  & dd {
+    padding-left: 38px;
+  }
+
   @media (min-width: @width-tablet) {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
     margin-bottom: 57px;
     row-gap: 7px;
+    padding-right: 41px;
   }
 
   @media (min-width: @width-desktop) {
@@ -154,6 +157,7 @@
 }
 
 .weekly__params-item {
+  margin: 0;
   padding-bottom: 15px;
   font-size: 15px;
   line-height: 20px;
@@ -170,13 +174,17 @@
   margin-bottom: 21px;
 
   @media (min-width: @width-tablet) {
-    grid-row: 1 / 5;
-    grid-column: 2 / 3;
+    display: flex;
+    align-items: end;
+    grid-column: 2 / 4;
+    grid-row: 2 / 5;
     margin: 0;
-    height: 404px;
   }
 
   @media (min-width: @width-desktop) {
+    align-items: normal;
+    grid-column: 3 / 4;
+    grid-row: 1 / 5;
     height: 636px;
   }
 }
@@ -204,6 +212,8 @@
   }
 
   @media (min-width: @width-desktop) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
     padding-left: 74px;
     margin-bottom: 34px;
   }
@@ -216,8 +226,14 @@
   padding-bottom: 15px;
 
   @media (min-width: @width-tablet) {
-    grid-row: 4 / 5;
     grid-column: 1 / 2;
-    margin-bottom: 0;
+    grid-row: 4 / 5;
+    margin-bottom: 5px;
+    width: 292px;
+  }
+
+  @media (min-width: @width-desktop) {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
   }
 }

@@ -18,8 +18,9 @@
     @media (min-width: @width-tablet) {
       & .navigation__item {
         padding: 0;
-        padding-top: 19px;
+        padding-top: 22px;
         border: none;
+        background-color: transparent;
       }
 
       & .navigation__link {
@@ -29,7 +30,7 @@
 
     @media (min-width: @width-desktop) {
       & .navigation__item {
-        background-color: #ffffff;
+        background-color: transparent;
         padding-top: 33px;
         padding-bottom: 31px;
         padding-right: 35px;
@@ -48,7 +49,7 @@
   &--resizable-for-utility {
     @media (min-width: @width-tablet) {
       & .navigation__item {
-        background-color: #ffffff;
+        background-color: transparent;
         padding-top: 33px;
         padding-bottom: 31px;
         padding-left: 84px;
@@ -127,6 +128,13 @@
 
   &:active {
     color: rgba(#000000, 0.3);
+  }
+
+  &:focus {
+    & svg {
+      outline: 2px solid #000000;
+      opacity: 1;
+    }
   }
 }
 

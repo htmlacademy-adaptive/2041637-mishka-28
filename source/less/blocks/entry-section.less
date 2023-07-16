@@ -2,7 +2,6 @@
   position: relative;
   box-sizing: border-box;
   background-color: #f1f1f1;
-  border-top: 1px solid rgba(#000000, 0.1);
 
   @media (min-width: @width-tablet) {
     margin-bottom: 67px;
@@ -23,7 +22,7 @@
       background-image: url("../img/zigzag.svg");
       background-repeat: repeat-x;
       background-position: center;
-      z-index: 2;
+      z-index: 3;
     }
 
     @media (min-width: @width-desktop) {
@@ -82,12 +81,6 @@
         );
       }
     }
-
-    &::before {
-      @media (min-width: @width-tablet) {
-        background-size: 1250px 34px;
-      }
-    }
   }
 }
 
@@ -97,12 +90,12 @@
   padding-bottom: 73px;
 
   @media (min-width: @width-tablet) {
-    padding-top: 100px;
+    padding-top: 54px;
     padding-bottom: 87px;
   }
 
   @media (min-width: @width-desktop) {
-    padding-top: 101px;
+    padding-top: 58px;
     padding-bottom: 113px;
   }
 
@@ -110,12 +103,12 @@
     padding-bottom: 120px;
 
     @media (min-width: @width-tablet) {
-      padding-top: 154px;
+      padding-top: 110px;
       padding-bottom: 372px;
     }
 
     @media (min-width: @width-desktop) {
-      padding-top: 157px;
+      padding-top: 114px;
       padding-bottom: 355px;
     }
   }

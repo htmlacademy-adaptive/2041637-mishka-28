@@ -18,7 +18,11 @@
   </head>
   <body class="site-body">
 
+    {% if page == 'index' %}
+    <header class="site-header site-header--index">
+    {% else %}
     <header class="site-header">
+    {% endif %}
       <div class="site-header__wrapper">
         <a class="site-header__logo" {%- if page != 'index' %} href="./index.html" {% endif -%}>
           <picture>
@@ -81,6 +85,7 @@
           <svg class="site-footer__logo-image" width="102" height="35">
             <use href="./img/sprite.svg#footer-logo" />
           </svg>
+          <span class="visually-hidden">Мишка</span>
         </a>
         <ul class="site-footer__socials socials">
           <li class="socials__item">
@@ -88,6 +93,7 @@
               <svg width="29" height="23">
                 <use href="./img/sprite.svg#vkontakte" />
               </svg>
+              <span class="visually-hidden">Мы в вконтакте</span>
             </a>
           </li>
           <li class="socials__item">
@@ -95,6 +101,7 @@
               <svg width="29" height="23">
                 <use href="./img/sprite.svg#youtube" />
               </svg>
+              <span class="visually-hidden">Мы в youtube</span>
             </a>
           </li>
           <li class="socials__item">
@@ -102,6 +109,7 @@
               <svg width="29" height="23">
                 <use href="./img/sprite.svg#telegram" />
               </svg>
+              <span class="visually-hidden">Мы в telegram</span>
             </a>
           </li>
         </ul>
@@ -111,6 +119,7 @@
             <svg width="27" height="35">
               <use href="./img/sprite.svg#htmlacademy" />
             </svg>
+            <span class="visually-hidden">Курс адаптивной верстки</span>
           </a>
         </div>
       </div>
@@ -123,9 +132,18 @@
         <p class="modal__tip">Выберите размер:</p>
         <div class="modal__controls">
           <div class="modal__input-container">
-            <input class="modal__input modal__input--s" type="radio" name="size" value="size-s" checked>
-            <input class="modal__input modal__input--m" type="radio" name="size" value="size-m">
-            <input class="modal__input modal__input--l" type="radio" name="size" value="size-l">
+            <div class="modal__input-item">
+              <label class="modal__label" for="size-s">s</label>
+              <input class="modal__input" type="radio" name="size" value="size-s" id="size-s" checked>
+            </div>
+            <div class="modal__input-item">
+              <label class="modal__label" for="size-m">m</label>
+              <input class="modal__input" type="radio" name="size" value="size-m" id="size-m">
+            </div>
+            <div class="modal__input-item">
+              <label class="modal__label" for="size-l">l</label>
+              <input class="modal__input" type="radio" name="size" value="size-l" id="size-l">
+            </div>
           </div>
           <button class="modal__button" type="submit">Добавить</button>
         </div>

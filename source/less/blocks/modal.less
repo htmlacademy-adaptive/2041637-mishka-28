@@ -82,35 +82,34 @@
   margin-bottom: 31px;
 }
 
+.modal__input-item {
+  position: relative;
+}
+
+.modal__label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #444444;
+}
+
 .modal__input {
   appearance: none;
   background-color: #ffffff;
   margin: 0;
   display: flex;
   box-sizing: border-box;
-  height: 52px;
+  width: 82px;
+  min-height: 52px;
   border: 2px solid rgb(#444444, 0.1);
-  align-items: center;
-  justify-content: center;
 
-  &::before {
-    font-size: 17px;
-    line-height: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #444444;
-  }
-
-  &--s::before {
-    content: "s";
-  }
-
-  &--m::before {
-    content: "m";
-  }
-
-  &--l::before {
-    content: "l";
+  @media (min-width: @width-tablet) {
+    width: 112px;
   }
 
   &:hover {
